@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  THAY ĐỔI: tiêu đề bài viết và mô tả ngắn (SEO)
+  ============================================================ -->
+<title>TIÊU ĐỀ BÀI VIẾT — The Becoming Learners</title>
+<meta name="description" content="MÔ TẢ NGẮN 1-2 CÂU VỀ BÀI VIẾT (hiện trên Google)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+  SERIES BADGE COLOR — chọn 1 trong các option bên dưới
+  Bỏ comment dòng tương ứng với series của bài viết này
+  ============================================================ */
+
+/* LAI series (orange) */
+/* --series-color: #854F0B; --series-bg: #FEF3E7; */
+
+/* L5M series (green/teal) — mặc định */
+--series-color: #085041; --series-bg: #E1F5EE;
+
+/* BAL series (purple) */
+/* --series-color: #3C3489; --series-bg: #EEEDFE; */
+
+/* TWC series (coral) */
+/* --series-color: #712B13; --series-bg: #FAECE7; */
+
+/* AC series (blue) */
+/* --series-color: #0C447C; --series-bg: #EBF4FF; */
+
+:root {
+  --orange: #C4611A;
+  --orange-light: #FEF3E7;
+  --ink: #0F0E0C;
+  --ink-soft: #3A3835;
+  --ink-muted: #7A7872;
+  --ink-faint: #B8B5AF;
+  --paper: #FAF8F4;
+  --paper-warm: #F2EFE8;
+  --white: #FFFFFF;
+  --teal: #1A5C5C;
+  --border: rgba(15,14,12,0.10);
+  --border-soft: rgba(15,14,12,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+.accent-bar { height: 3px; background: var(--orange); }
+nav { background: var(--paper); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { font-family: 'Lora', serif; font-weight: 500; font-size: 17px; color: var(--ink); text-decoration: none; }
+.wordmark span { color: var(--orange); }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; }
+.nav-links a:hover { color: var(--ink); }
+.breadcrumb { max-width: 720px; margin: 0 auto; padding: 20px 24px 0; display: flex; gap: 8px; align-items: center; }
+.breadcrumb a { font-size: 13px; color: var(--ink-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--orange); }
+.breadcrumb-sep { font-size: 13px; color: var(--ink-faint); }
+.breadcrumb-current { font-size: 13px; color: var(--ink-faint); }
+.article-header { max-width: 720px; margin: 0 auto; padding: 32px 24px 40px; border-bottom: 1px solid var(--border); }
+.article-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.series-badge { font-size: 11px; font-weight: 500; padding: 4px 11px; border-radius: 5px; letter-spacing: 0.3px; background: var(--series-bg, #E1F5EE); color: var(--series-color, #085041); }
+.article-date { font-size: 13px; color: var(--ink-muted); }
+.read-time { font-size: 13px; color: var(--ink-muted); }
+.meta-dot { width: 3px; height: 3px; background: var(--ink-faint); border-radius: 50%; }
+.article-title { font-family: 'Lora', serif; font-size: 40px; font-weight: 500; line-height: 1.18; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.8px; }
+.article-subtitle { font-family: 'Lora', serif; font-size: 20px; font-weight: 400; font-style: italic; color: var(--ink-muted); margin-bottom: 24px; line-height: 1.45; }
+.article-byline { display: flex; align-items: center; gap: 12px; }
+.byline-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--orange-light); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--orange); }
+.byline-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.byline-role { font-size: 12px; color: var(--ink-muted); margin-top: 1px; }
+.status-intro { max-width: 720px; margin: 0 auto; padding: 0 24px 32px; }
+.status-box { background: var(--series-bg, #E1F5EE); border-left: 3px solid var(--series-color, #085041); border-radius: 0 8px 8px 0; padding: 18px 20px; margin-top: 32px; }
+.status-box p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; font-style: italic; }
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+.article-body p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 24px; }
+.article-body h2 { font-family: 'Lora', serif; font-size: 26px; font-weight: 500; color: var(--ink); margin: 44px 0 18px; letter-spacing: -0.3px; line-height: 1.3; }
+.article-body h3 { font-family: 'Lora', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin: 32px 0 14px; }
+.article-body blockquote { border-left: 3px solid var(--orange); margin: 32px 0; padding: 4px 0 4px 24px; }
+.article-body blockquote p { font-family: 'Lora', serif; font-size: 19px; font-style: italic; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+.article-body strong { font-weight: 500; color: var(--ink); }
+.article-signoff { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+.signoff-text { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; font-style: italic; color: var(--ink); margin-bottom: 4px; }
+.signoff-name { font-size: 14px; color: var(--ink-muted); }
+.next-episode { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+.next-label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+.next-card { display: flex; justify-content: space-between; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; text-decoration: none; color: inherit; transition: border-color 0.2s; }
+.next-card:hover { border-color: var(--series-color, #085041); }
+.next-series { font-size: 11px; color: var(--series-color, #085041); font-weight: 500; margin-bottom: 4px; }
+.next-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 500; color: var(--ink); }
+.next-arrow { font-size: 20px; color: var(--ink-faint); }
+.article-footer { border-top: 1px solid var(--border); padding: 20px 24px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-brand { font-size: 13px; color: var(--ink-muted); }
+.footer-brand strong { color: var(--ink); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--ink-faint); text-decoration: none; }
+.kh-bar { height: 2px; background: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="../index.html#series">Series</a></li>
+      <li><a href="../index.html#podcast">Podcast</a></li>
+      <li><a href="../index.html#events">Events</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================
+  BREADCRUMB — thay TÊN SERIES và POST ID
+  ============================================================ -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="../index.html#series">TÊN SERIES (vd: Learning in 5 Minutes)</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">POST-ID (vd: L5M-01)</span>
+</div>
+
+<!-- ============================================================
+  ARTICLE HEADER — thay các thông tin cơ bản
+  ============================================================ -->
+<header class="article-header">
+  <div class="article-meta">
+    <span class="series-badge">SERIES CODE · Episode XX</span>
+    <span class="meta-dot"></span>
+    <span class="article-date">TÊN SERIES ĐẦY ĐỦ</span>
+    <span class="meta-dot"></span>
+    <span class="read-time">X min read</span>
+  </div>
+
+  <h1 class="article-title">TIÊU ĐỀ CHÍNH CỦA BÀI VIẾT</h1>
+  <p class="article-subtitle">Subtitle hoặc tagline (in nghiêng, tùy chọn)</p>
+
+  <div class="article-byline">
+    <div class="byline-avatar">VP</div>
+    <div>
+      <div class="byline-name">Vy Phan</div>
+      <div class="byline-role">EFL educator · Doctoral researcher · Đồng Nai, Vietnam</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+  STATUS INTRO BOX — đoạn mở đầu kéo reader vào bài
+  ============================================================ -->
+<div class="status-intro">
+  <div class="status-box">
+    <p>ĐOẠN INTRO NGẮN — câu hỏi hoặc tình huống kéo reader vào bài. Thường 2-3 câu. Ví dụ: "Trước khi đọc, hãy thử..."</p>
+  </div>
+</div>
+
+<!-- ============================================================
+  ARTICLE BODY — nội dung chính
+  Các thẻ có thể dùng:
+    <p> — đoạn văn thường
+    <h2> — tiêu đề section
+    <h3> — tiêu đề sub-section
+    <blockquote><p>...</p></blockquote> — trích dẫn nổi bật
+    <strong> — in đậm
+    <em> — in nghiêng
+  ============================================================ -->
+<main class="article-body">
+
+  <p>Đoạn mở bài — câu đầu tiên quan trọng nhất.</p>
+
+  <p>Đoạn 2...</p>
+
+  <h2>Tiêu đề Section 1</h2>
+
+  <p>Nội dung section 1...</p>
+
+  <blockquote>
+    <p>Câu trích dẫn quan trọng hoặc insight cốt lõi của bài — thường 1-2 câu.</p>
+  </blockquote>
+
+  <h2>Tiêu đề Section 2</h2>
+
+  <p>Nội dung section 2...</p>
+
+  <h2>Tiêu đề Section 3 (Actionable)</h2>
+
+  <p>Phần này là kỹ thuật / hành động cụ thể cho reader.</p>
+
+  <p>...</p>
+
+  <!-- KẾT BÀI — giữ nguyên format này -->
+  <div class="article-signoff">
+    <div class="signoff-text">Keep learning. Keep becoming.</div>
+    <div class="signoff-name">— Vy</div>
+  </div>
+
+</main>
+
+<!-- ============================================================
+  NEXT EPISODE — link sang bài tiếp theo trong series
+  Nếu chưa có bài tiếp theo, xóa block này
+  ============================================================ -->
+<div class="next-episode">
+  <div class="next-label">Next in the series</div>
+  <a class="next-card" href="TEN-FILE-BAI-TIEP-THEO.html">
+    <div>
+      <div class="next-series">SERIES CODE · Episode XX</div>
+      <div class="next-title">Tiêu đề bài tiếp theo</div>
+    </div>
+    <span class="next-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <div class="article-footer">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="../index.html">← All articles</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+
+</body>
+</html>
