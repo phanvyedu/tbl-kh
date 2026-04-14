@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Series — The Becoming Learners</title>
+<meta name="description" content="Explore all series on The Becoming Learners — LAI, L5M, TWC, BAL and more. Learning science, AI in education, and educational thinkers from a Vietnamese classroom perspective.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#C4611A;--orange-light:#FEF3E7;--ink:#0F0E0C;--ink-soft:#3A3835;
+  --ink-muted:#7A7872;--ink-faint:#B8B5AF;--paper:#FAF8F4;--paper-warm:#F2EFE8;
+  --white:#FFFFFF;--teal:#1A5C5C;--border:rgba(15,14,12,0.10);--border-soft:rgba(15,14,12,0.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.accent-bar{height:3px;background:var(--orange)}
+nav{background:var(--paper);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-family:'Lora',serif;font-weight:500;font-size:17px;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active{font-weight:500}
+
+.page-header{max-width:1100px;margin:0 auto;padding:48px 24px 40px;border-bottom:1px solid var(--border)}
+.page-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.page-title{font-family:'Lora',serif;font-size:36px;font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:14px;letter-spacing:-0.5px}
+.page-desc{font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:560px}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:16px 24px 0;display:flex;gap:8px;align-items:center}
+.breadcrumb a{font-size:13px;color:var(--ink-muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--orange)}
+.breadcrumb-sep{font-size:13px;color:var(--ink-faint)}
+.breadcrumb-current{font-size:13px;color:var(--ink-faint)}
+
+.series-grid{max-width:1100px;margin:0 auto;padding:40px 24px 64px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+
+.series-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s,transform 0.15s}
+.series-card:hover{border-color:var(--card-color,var(--orange));transform:translateY(-2px)}
+
+.card-header{padding:24px 24px 20px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--border-soft)}
+.card-badge{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--grad-start),var(--grad-end));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex-shrink:0}
+.badge-code{font-size:14px;font-weight:500;color:white;letter-spacing:0.5px}
+.badge-sub{font-size:8px;color:rgba(255,255,255,0.8);letter-spacing:0.3px;text-align:center;line-height:1.3}
+.card-header-text{flex:1}
+.card-series-id{font-size:10px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.card-title{font-family:'Lora',serif;font-size:20px;font-weight:500;line-height:1.25;color:var(--ink);letter-spacing:-0.2px}
+.card-body{padding:16px 24px 20px}
+.card-desc{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.card-tag{font-size:11px;padding:3px 9px;border-radius:4px;background:var(--tag-bg);color:var(--tag-color);font-weight:400}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-eps{font-size:12px;color:var(--ink-muted)}
+.card-eps strong{color:var(--card-color,var(--orange));font-weight:500}
+.card-cta{font-size:13px;font-weight:500;color:var(--card-color,var(--orange))}
+
+.coming-label{display:inline-block;font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px;background:var(--paper-warm);color:var(--ink-faint);letter-spacing:0.3px;margin-top:8px}
+
+footer{border-top:1px solid var(--border)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:13px;color:var(--ink-muted)}
+.footer-brand strong{color:var(--ink)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--ink-faint);text-decoration:none}
+.kh-bar{height:2px;background:var(--teal)}
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="index.html" class="active">Series</a></li>
+      <li><a href="../index.html#podcast">Podcast</a></li>
+      <li><a href="../index.html#events">Events</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">All series</span>
+</div>
+
+<div class="page-header">
+  <div class="page-eyebrow">The Becoming Learners</div>
+  <h1 class="page-title">All series</h1>
+  <p class="page-desc">Each series explores a different dimension of learning — from the science behind how we remember, to the thinkers who shaped how we teach, to the daily reality of an AI-era classroom in Vietnam.</p>
+</div>
+
+<div class="series-grid">
+
+  <!-- LAI -->
+  <a class="series-card" href="lai.html" style="--card-color:#854F0B;--grad-start:#FAC775;--grad-end:#854F0B;--tag-bg:#FEF3E7;--tag-color:#854F0B">
+    <div class="card-header">
+      <div class="card-badge">
+        <span class="badge-code">LAI</span>
+        <span class="badge-sub">Learning<br>&amp; AI</span>
+      </div>
+      <div class="card-header-text">
+        <div class="card-series-id" style="color:#854F0B">LAI · Learning in the Age of AI</div>
+        <div class="card-title">Learning &amp; AI</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">AI is already in Vietnamese classrooms. This series doesn't ask whether to use it — it asks what happens to learning when we do. Every episode is anchored to a learning theory, not a tool list.</p>
+      <div class="card-tags">
+        <span class="card-tag">Critical lens</span>
+        <span class="card-tag">Vietnamese classroom</span>
+        <span class="card-tag">Cognitive science</span>
+        <span class="card-tag">Educator identity</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-eps"><strong>6 episodes</strong> · 1 published</span>
+        <span class="card-cta">Explore series →</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- L5M -->
+  <a class="series-card" href="l5m.html" style="--card-color:#085041;--grad-start:#9FE1CB;--grad-end:#085041;--tag-bg:#E1F5EE;--tag-color:#085041">
+    <div class="card-header">
+      <div class="card-badge">
+        <span class="badge-code">L5M</span>
+        <span class="badge-sub">5 Minutes</span>
+      </div>
+      <div class="card-header-text">
+        <div class="card-series-id" style="color:#085041">L5M · Learning in 5 Minutes</div>
+        <div class="card-title">Learning in 5 Minutes</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">One concept from learning science. One actionable technique. Every episode ends with something you can try today — because knowing about learning isn't the same as doing it.</p>
+      <div class="card-tags">
+        <span class="card-tag">Retrieval practice</span>
+        <span class="card-tag">Spacing effect</span>
+        <span class="card-tag">Cognitive load</span>
+        <span class="card-tag">Actionable</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-eps"><strong>4 episodes</strong> · 1 published</span>
+        <span class="card-cta">Explore series →</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- TWC -->
+  <a class="series-card" href="twc.html" style="--card-color:#712B13;--grad-start:#F5C4B3;--grad-end:#712B13;--tag-bg:#FAECE7;--tag-color:#712B13">
+    <div class="card-header">
+      <div class="card-badge">
+        <span class="badge-code">TWC</span>
+        <span class="badge-sub">Thinkers</span>
+      </div>
+      <div class="card-header-text">
+        <div class="card-series-id" style="color:#712B13">TWC · Thinkers Who Changed Education</div>
+        <div class="card-title">Thinkers Who Changed Education</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">The ideas of Dewey, Vygotsky, Freire and others didn't stay in their century. This series traces how their thinking — and its limits — shows up in Vietnamese classrooms today.</p>
+      <div class="card-tags">
+        <span class="card-tag">John Dewey</span>
+        <span class="card-tag">Vygotsky</span>
+        <span class="card-tag">Freire</span>
+        <span class="card-tag">Educational philosophy</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-eps"><strong>2 episodes</strong> · coming soon</span>
+        <span class="card-cta">Explore series →</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- BAL -->
+  <a class="series-card" href="bal.html" style="--card-color:#3C3489;--grad-start:#AFA9EC;--grad-end:#3C3489;--tag-bg:#EEEDFE;--tag-color:#3C3489">
+    <div class="card-header">
+      <div class="card-badge">
+        <span class="badge-code">BAL</span>
+        <span class="badge-sub">Becoming<br>a Learner</span>
+      </div>
+      <div class="card-header-text">
+        <div class="card-series-id" style="color:#3C3489">BAL · Becoming a Learner</div>
+        <div class="card-title">Becoming a Learner</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">After 15 years of teaching, the shift from teacher-identity to learner-identity changed everything. This series is personal — about what it actually means to keep learning when learning is your job.</p>
+      <div class="card-tags">
+        <span class="card-tag">Personal reflection</span>
+        <span class="card-tag">Learner identity</span>
+        <span class="card-tag">Doctoral journey</span>
+        <span class="card-tag">Growth mindset</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-eps"><strong>1 episode</strong> · coming soon</span>
+        <span class="card-cta">Explore series →</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="../index.html">← Home</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+</body>
+</html>
