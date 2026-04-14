@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Does AI Make Us Better Learners — or Just Faster Forgetters? — The Becoming Learners</title>
+<meta name="description" content="When AI handles retrieval for us, what happens to the learning? A look at cognitive load theory, the generation effect, and what Vietnamese classrooms reveal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #C4611A;
+  --orange-light: #FEF3E7;
+  --ink: #0F0E0C;
+  --ink-soft: #3A3835;
+  --ink-muted: #7A7872;
+  --ink-faint: #B8B5AF;
+  --paper: #FAF8F4;
+  --paper-warm: #F2EFE8;
+  --white: #FFFFFF;
+  --teal: #1A5C5C;
+  --border: rgba(15,14,12,0.10);
+  --border-soft: rgba(15,14,12,0.06);
+  --series-color: #854F0B;
+  --series-bg: #FEF3E7;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+.accent-bar { height: 3px; background: var(--orange); }
+nav { background: var(--paper); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { font-family: 'Lora', serif; font-weight: 500; font-size: 17px; color: var(--ink); text-decoration: none; }
+.wordmark span { color: var(--orange); }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--ink); }
+.breadcrumb { max-width: 720px; margin: 0 auto; padding: 20px 24px 0; display: flex; gap: 8px; align-items: center; }
+.breadcrumb a { font-size: 13px; color: var(--ink-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--orange); }
+.breadcrumb-sep, .breadcrumb-current { font-size: 13px; color: var(--ink-faint); }
+.article-header { max-width: 720px; margin: 0 auto; padding: 32px 24px 40px; border-bottom: 1px solid var(--border); }
+.article-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.series-badge { font-size: 11px; font-weight: 500; padding: 4px 11px; border-radius: 5px; letter-spacing: 0.3px; background: var(--series-bg); color: var(--series-color); }
+.article-date, .read-time { font-size: 13px; color: var(--ink-muted); }
+.meta-dot { width: 3px; height: 3px; background: var(--ink-faint); border-radius: 50%; }
+.article-title { font-family: 'Lora', serif; font-size: 38px; font-weight: 500; line-height: 1.18; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.8px; }
+.article-subtitle { font-family: 'Lora', serif; font-size: 19px; font-weight: 400; font-style: italic; color: var(--ink-muted); margin-bottom: 24px; line-height: 1.45; }
+.article-byline { display: flex; align-items: center; gap: 12px; }
+.byline-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--orange-light); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--orange); flex-shrink: 0; }
+.byline-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.byline-role { font-size: 12px; color: var(--ink-muted); margin-top: 1px; }
+
+/* HERO IMAGE */
+.hero-image-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.hero-image-wrap img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; margin-top: 32px; display: block; }
+.image-credit { font-size: 11px; color: var(--ink-faint); margin-top: 6px; text-align: right; }
+.image-credit a { color: var(--ink-faint); text-decoration: none; }
+
+/* STATUS BOX */
+.status-intro { max-width: 720px; margin: 0 auto; padding: 0 24px 32px; }
+.status-box { background: var(--series-bg); border-left: 3px solid var(--series-color); border-radius: 0 8px 8px 0; padding: 18px 20px; margin-top: 32px; }
+.status-box p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; font-style: italic; }
+
+/* ARTICLE BODY */
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+.article-body p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 24px; }
+.article-body h2 { font-family: 'Lora', serif; font-size: 26px; font-weight: 500; color: var(--ink); margin: 44px 0 18px; letter-spacing: -0.3px; line-height: 1.3; }
+.article-body h3 { font-family: 'Lora', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin: 32px 0 14px; }
+.article-body blockquote { border-left: 3px solid var(--orange); margin: 32px 0; padding: 4px 0 4px 24px; }
+.article-body blockquote p { font-family: 'Lora', serif; font-size: 19px; font-style: italic; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+.article-body strong { font-weight: 500; color: var(--ink); }
+.article-body em { font-style: italic; }
+
+/* INLINE IMAGE */
+.inline-image { margin: 36px 0; }
+.inline-image img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; display: block; }
+.inline-image .caption { font-size: 12px; color: var(--ink-faint); margin-top: 8px; text-align: center; font-style: italic; }
+
+/* RESEARCH BOX */
+.research-box { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--series-color); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 32px 0; }
+.research-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--series-color); margin-bottom: 10px; }
+.research-box p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 8px; }
+.research-box p:last-child { margin-bottom: 0; }
+.research-cite { font-size: 12px; color: var(--ink-faint); font-style: italic; }
+
+/* KEY CONCEPT TABLE */
+.concept-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+.concept-table th { text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-muted); border-bottom: 2px solid var(--border); }
+.concept-table td { padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--border-soft); color: var(--ink-soft); line-height: 1.5; }
+.concept-table tr:last-child td { border-bottom: none; }
+.concept-table td:first-child { font-weight: 500; color: var(--ink); }
+.concept-table tr:nth-child(2) td { background: rgba(196,97,26,0.04); }
+
+/* SIGNOFF */
+.article-signoff { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+.signoff-text { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; font-style: italic; color: var(--ink); margin-bottom: 4px; }
+.signoff-name { font-size: 14px; color: var(--ink-muted); }
+
+/* REFERENCES */
+.references { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+.references-title { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.ref-item { font-size: 13px; color: var(--ink-muted); line-height: 1.6; padding: 8px 0; border-bottom: 1px solid var(--border-soft); }
+.ref-item:last-child { border-bottom: none; }
+
+/* NEXT */
+.next-episode { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+.next-label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+.next-card { display: flex; justify-content: space-between; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; text-decoration: none; color: inherit; transition: border-color 0.2s; }
+.next-card:hover { border-color: var(--series-color); }
+.next-series { font-size: 11px; color: var(--series-color); font-weight: 500; margin-bottom: 4px; }
+.next-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 500; color: var(--ink); }
+.next-arrow { font-size: 20px; color: var(--ink-faint); }
+
+footer { border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-brand { font-size: 13px; color: var(--ink-muted); }
+.footer-brand strong { color: var(--ink); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--ink-faint); text-decoration: none; }
+.kh-bar { height: 2px; background: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="../series/index.html">Series</a></li>
+      <li><a href="../index.html#podcast">Podcast</a></li>
+      <li><a href="../index.html#events">Events</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="../series/lai.html">Learning in the Age of AI</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">LAI-01</span>
+</div>
+
+<header class="article-header">
+  <div class="article-meta">
+    <span class="series-badge">LAI · Episode 01</span>
+    <span class="meta-dot"></span>
+    <span class="article-date">Learning in the Age of AI</span>
+    <span class="meta-dot"></span>
+    <span class="read-time">10 min read</span>
+  </div>
+  <h1 class="article-title">Does AI Make Us Better Learners — or Just Faster Forgetters?</h1>
+  <p class="article-subtitle">When AI handles the hard cognitive work for us, something important may be getting lost.</p>
+  <div class="article-byline">
+    <div class="byline-avatar">VP</div>
+    <div>
+      <div class="byline-name">Vy Phan</div>
+      <div class="byline-role">EFL educator · Doctoral researcher · Đồng Nai, Vietnam</div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO IMAGE -->
+<div class="hero-image-wrap">
+  <img
+    src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1400&q=80&auto=format&fit=crop"
+    alt="Abstract representation of AI and neural networks — the intersection of technology and human cognition"
+  />
+  <p class="image-credit">
+    Photo by <a href="https://unsplash.com/@levart_photographer" target="_blank">Levart Photographer</a> on <a href="https://unsplash.com" target="_blank">Unsplash</a> · Free to use
+  </p>
+</div>
+
+<!-- STATUS INTRO -->
+<div class="status-intro">
+  <div class="status-box">
+    <p>Before you read: think of the last time you used AI to help you understand something — a concept, a text, a problem. Did you close the tab feeling like you had learned it? Now, a week later, can you explain that thing without the AI? What you can recall freely is what you actually learned. The rest was something else. That gap is what this article is about.</p>
+  </div>
+</div>
+
+<main class="article-body">
+
+  <p>My students in Đồng Nai are using AI. I know this not because they told me — they didn't — but because I recognise the outputs. A paragraph that flows too smoothly. An explanation that uses vocabulary the student has never used in conversation. A homework answer that is technically correct but somehow hollow, like a shell with nothing inside.</p>
+
+  <p>I am not here to condemn them. I am doing the same thing. As a doctoral researcher studying learning science, I have used AI to summarise papers, generate outlines, and explain statistical concepts I was struggling with. It is useful. It is fast. And it raises a question I cannot stop thinking about:</p>
+
+  <blockquote>
+    <p>When AI does the cognitive heavy lifting for us, are we learning — or are we simply processing?</p>
+  </blockquote>
+
+  <p>The answer, I think, lies in a distinction that learning science has understood for decades. A distinction that AI — however sophisticated — does not automatically respect.</p>
+
+  <h2>The Generation Effect: Why Struggle Is the Point</h2>
+
+  <p>In 1978, Norman Slamecka and Peter Graf published a study that would quietly reshape how researchers think about memory. They asked participants to learn word pairs — either by reading them (e.g., "fast — SLOW") or by generating the second word themselves from a cue (e.g., "fast — SL__"). The result was striking: participants who generated the words themselves remembered them significantly better than those who simply read them.</p>
+
+  <p>This is known as the <strong>generation effect</strong> — the finding that information we produce ourselves is retained more durably than information we passively receive.</p>
+
+  <div class="research-box">
+    <div class="research-label">Key Research</div>
+    <p>Slamecka &amp; Graf (1978) demonstrated that self-generated responses produced reliably stronger memory than read responses, even when the read responses were studied longer. The effect has been replicated across dozens of studies and holds across age groups, content types, and learning contexts.</p>
+    <p class="research-cite">Slamecka, N. J., &amp; Graf, P. (1978). The generation effect: Delineation of a phenomenon. <em>Journal of Experimental Psychology: Human Learning and Memory, 4</em>(6), 592–604.</p>
+  </div>
+
+  <p>Now consider what happens when a student asks AI to explain a concept. The AI generates. The student receives. The cognitive act of <em>producing</em> — of reaching into existing knowledge, making connections, constructing an answer — is bypassed entirely.</p>
+
+  <p>The student has been given the answer without doing the work that makes answers stick.</p>
+
+  <h2>Cognitive Load Theory and the Shortcut Problem</h2>
+
+  <p>John Sweller's cognitive load theory, developed through the 1980s and refined since, offers a complementary lens. Sweller argued that learning happens when working memory is appropriately challenged — not overwhelmed, but not underutilised either. The goal is to direct cognitive effort toward the <em>schema construction</em> that produces lasting understanding.</p>
+
+  <p>The problem with many AI-assisted workflows is not that they reduce cognitive load — that can be useful — but that they reduce the <em>right kind</em> of cognitive load. When a student uses AI to generate a summary of a chapter they haven't read carefully, they skip the effortful processing that would have built the schema in the first place.</p>
+
+  <div class="inline-image">
+    <img
+      src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80&auto=format&fit=crop"
+      alt="A student studying at a desk — the kind of effortful processing that builds durable memory"
+    />
+    <p class="caption">Effortful processing — the kind of struggle that cognitive load theory tells us actually builds schemas. Photo: <a href="https://unsplash.com" target="_blank" style="color:var(--ink-faint)">Unsplash</a></p>
+  </div>
+
+  <p>Sweller distinguished between <em>intrinsic</em> load (the inherent complexity of the material), <em>extraneous</em> load (unnecessary cognitive effort from poor design), and <em>germane</em> load (effort that directly contributes to schema formation). Good teaching reduces extraneous load while preserving — even amplifying — germane load.</p>
+
+  <p>AI, used thoughtlessly, risks eliminating germane load entirely. It is the most sophisticated form of extraneous support ever invented, and it carries a serious risk: making learning feel easy while leaving nothing behind.</p>
+
+  <div class="research-box">
+    <div class="research-label">Key Research</div>
+    <p>Sweller's original cognitive load framework established that working memory is limited and that learning requires managing this limitation intelligently. The key insight for AI-assisted learning: reducing cognitive effort is not always beneficial — the effort required for schema construction is educationally necessary, not merely difficult.</p>
+    <p class="research-cite">Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <em>Cognitive Science, 12</em>(2), 257–285.</p>
+  </div>
+
+  <h2>What I Observed in Đồng Nai</h2>
+
+  <p>I want to be careful here. I am not making a universal claim. I am describing a pattern I have observed in my own classroom, in a specific cultural and educational context — and inviting you to consider what it might mean in yours.</p>
+
+  <p>In the EFL classroom, the production of language is itself the learning. When a student struggles to find the right word, reaches for a grammatical structure they half-remember, makes a mistake and notices it — that is language acquisition happening. Stephen Krashen's Input Hypothesis argued that comprehensible input at <em>i+1</em> — just beyond current competence — is the engine of acquisition. But input without output, without the student's own production, is only half the equation.</p>
+
+  <p>What I see with AI-assisted writing is different. The student produces a text, but the language in that text was never processed through their own developing system. They did not search for the word. They did not make a grammatical decision. They received a polished product that bypassed the productive struggle that would have made the language theirs.</p>
+
+  <blockquote>
+    <p>The AI wrote in English. The student, in any meaningful sense, did not.</p>
+  </blockquote>
+
+  <p>This is not a Vietnamese problem or an EFL problem. It is a learning science problem. And it applies equally to a graduate student using AI to generate literature review sections, a professional using AI to draft analysis they should be constructing themselves, or a researcher using AI to summarise papers they should be reading.</p>
+
+  <h2>The Retrieval Gap: What Testing Yourself Reveals</h2>
+
+  <p>Roediger and Karpicke's 2006 study on retrieval practice showed something that should unsettle every AI-dependent learner. Students who re-studied material performed better on immediate tests. Students who tested themselves — even when they failed to retrieve the answers — performed dramatically better one week later.</p>
+
+  <table class="concept-table">
+    <thead>
+      <tr>
+        <th>Condition</th>
+        <th>Immediate test</th>
+        <th>One week later</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Re-study (read repeatedly)</td>
+        <td>Strong</td>
+        <td>Weak — significant forgetting</td>
+      </tr>
+      <tr>
+        <td>Retrieval practice (self-test)</td>
+        <td>Moderate</td>
+        <td>Strong — durable retention</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The implication is profound. The act of <em>trying to remember</em> — even imperfectly, even failing — is what builds the memory trace that survives time. Reading a clean AI summary does the opposite: it provides the answer before the attempt, short-circuiting the retrieval process entirely.</p>
+
+  <div class="research-box">
+    <div class="research-label">Key Research</div>
+    <p>Roediger and Karpicke's landmark study demonstrated that testing produces better long-term retention than additional study time, even when test performance is initially weaker. This "testing effect" or "retrieval practice effect" is one of the most robust findings in cognitive psychology.</p>
+    <p class="research-cite">Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <em>Psychological Science, 17</em>(3), 249–255.</p>
+  </div>
+
+  <h2>So Is AI the Enemy of Learning?</h2>
+
+  <p>No. That is not the argument I am making, and I want to be precise about this.</p>
+
+  <p>AI can reduce extraneous cognitive load in ways that genuinely help learning. It can clarify confusing explanations. It can provide worked examples that a student can then attempt to replicate. It can offer feedback on output — provided the student produced that output themselves first. It can make knowledge more accessible to learners who have been systematically excluded from it.</p>
+
+  <p>The problem is not AI. The problem is a particular <em>pattern of use</em> — one in which AI does the generating, the constructing, the producing, and the learner merely receives and submits.</p>
+
+  <p>The question to ask is not "did I use AI?" but "what cognitive work did I do?" If the AI generated and I received, the learning is likely shallow. If I attempted first, struggled genuinely, and then used AI to check, correct, or extend my thinking, something real may have happened.</p>
+
+  <p>There is a version of AI-assisted learning that is deeply consistent with what learning science tells us. And there is a version that is simply sophisticated cheating — not of an exam, but of one's own developing mind.</p>
+
+  <h2>A Note on the Vietnamese Classroom Specifically</h2>
+
+  <p>I teach in a context shaped by particular pressures: high-stakes examinations, large class sizes, strong family expectations, and a Confucian educational inheritance that values performance and deference. These conditions do not cause AI misuse — but they do shape it.</p>
+
+  <p>In a system where the grade matters more than the understanding, and where asking questions can feel like admitting weakness, AI offers something seductive: a way to produce correct outputs without the vulnerability of genuine struggle. The student who uses AI to complete an assignment is not lazy. They are often navigating a system that rewards the output without valuing the process.</p>
+
+  <p>This is worth sitting with. The question of whether AI makes us better learners cannot be separated from the question of what we are asking learners to do, and why.</p>
+
+  <div class="article-signoff">
+    <div class="signoff-text">Keep learning. Keep becoming.</div>
+    <div class="signoff-name">— Vy</div>
+  </div>
+
+</main>
+
+<!-- REFERENCES -->
+<div class="references">
+  <div class="references-title">References</div>
+  <div class="ref-item">Krashen, S. D. (1982). <em>Principles and practice in second language acquisition.</em> Pergamon Press.</div>
+  <div class="ref-item">Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <em>Psychological Science, 17</em>(3), 249–255.</div>
+  <div class="ref-item">Slamecka, N. J., &amp; Graf, P. (1978). The generation effect: Delineation of a phenomenon. <em>Journal of Experimental Psychology: Human Learning and Memory, 4</em>(6), 592–604.</div>
+  <div class="ref-item">Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <em>Cognitive Science, 12</em>(2), 257–285.</div>
+  <div class="ref-item">Sweller, J., van Merriënboer, J. J. G., &amp; Paas, F. (1998). Cognitive architecture and instructional design. <em>Educational Psychology Review, 10</em>(3), 251–296.</div>
+</div>
+
+<!-- NEXT EPISODE -->
+<div class="next-episode">
+  <div class="next-label">Next in the series</div>
+  <a class="next-card" href="../series/lai.html">
+    <div>
+      <div class="next-series">LAI · Episode 02</div>
+      <div class="next-title">What Krashen's Input Hypothesis tells us about AI language tutors</div>
+    </div>
+    <span class="next-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="../index.html">← All articles</a>
+      <a href="../series/lai.html">LAI series</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+
+</body>
+</html>
