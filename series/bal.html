@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Becoming a Learner — The Becoming Learners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#C4611A;--orange-light:#FEF3E7;--ink:#0F0E0C;--ink-soft:#3A3835;--ink-muted:#7A7872;--ink-faint:#B8B5AF;--paper:#FAF8F4;--paper-warm:#F2EFE8;--white:#FFFFFF;--teal:#1A5C5C;--border:rgba(15,14,12,0.10);--border-soft:rgba(15,14,12,0.06);--series-color:#3C3489;--series-bg:#EEEDFE;--series-gradient-start:#AFA9EC;--series-gradient-end:#3C3489}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.accent-bar{height:3px;background:var(--orange)}
+nav{background:var(--paper);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-family:'Lora',serif;font-weight:500;font-size:17px;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:16px 24px 0;display:flex;gap:8px;align-items:center}
+.breadcrumb a{font-size:13px;color:var(--ink-muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--orange)}
+.breadcrumb-sep,.breadcrumb-current{font-size:13px;color:var(--ink-faint)}
+.series-hero{background:var(--series-bg);border-bottom:1px solid var(--border)}
+.series-hero-inner{max-width:1100px;margin:0 auto;padding:48px 24px 40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.series-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--series-color);margin-bottom:12px}
+.series-title{font-family:'Lora',serif;font-size:36px;font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:14px;letter-spacing:-0.5px}
+.series-desc{font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:520px;margin-bottom:20px}
+.series-stats{display:flex;gap:24px}
+.stat-num{font-size:24px;font-weight:500;color:var(--series-color);line-height:1;margin-bottom:3px}
+.stat-label{font-size:12px;color:var(--ink-muted)}
+.series-badge-large{width:100px;height:100px;border-radius:16px;background:linear-gradient(135deg,var(--series-gradient-start) 0%,var(--series-gradient-end) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.badge-code{font-size:22px;font-weight:500;color:white;letter-spacing:1px}
+.badge-label{font-size:10px;color:rgba(255,255,255,0.8);letter-spacing:0.5px;text-align:center;line-height:1.3}
+.episode-list-wrap{max-width:1100px;margin:0 auto;padding:32px 24px 48px;display:grid;grid-template-columns:1fr 280px;gap:48px}
+.episodes-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--series-color)}
+.episodes-title{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted)}
+.episode-card{display:grid;grid-template-columns:48px 1fr auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--border-soft);align-items:flex-start;text-decoration:none;color:inherit;transition:opacity 0.15s}
+.episode-card:last-child{border-bottom:none}
+.episode-card:hover{opacity:0.8}
+.episode-card:hover .ep-title{color:var(--series-color)}
+.episode-card.coming-soon{opacity:0.6;cursor:default}
+.episode-card.coming-soon:hover{opacity:0.6}
+.ep-number{width:40px;height:40px;border-radius:8px;background:var(--series-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--series-color);flex-shrink:0;margin-top:2px}
+.episode-card.coming-soon .ep-number{background:var(--paper-warm);color:var(--ink-faint)}
+.ep-meta{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.ep-id{font-size:10px;font-weight:500;color:var(--series-color);letter-spacing:0.5px}
+.ep-tag{font-size:10px;padding:2px 7px;border-radius:3px;background:var(--orange-light);color:var(--orange);font-weight:500}
+.ep-title{font-family:'Lora',serif;font-size:16px;font-weight:500;line-height:1.4;color:var(--ink);margin-bottom:6px;transition:color 0.15s}
+.ep-excerpt{font-size:13px;color:var(--ink-muted);line-height:1.5}
+.ep-arrow{font-size:18px;color:var(--ink-faint);padding-top:2px;flex-shrink:0}
+.episode-card.coming-soon .ep-arrow{display:none}
+.series-sidebar{padding-top:56px}
+.sidebar-block{margin-bottom:28px}
+.sidebar-title{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.other-series{list-style:none}
+.other-series-item{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border-soft);text-decoration:none;color:inherit;transition:opacity 0.15s}
+.other-series-item:last-child{border-bottom:none}
+.other-series-item:hover{opacity:0.7}
+.osi-code{font-size:10px;font-weight:500;margin-bottom:2px}
+.osi-name{font-family:'Lora',serif;font-size:13px;font-weight:500;line-height:1.3}
+.osi-desc{font-size:11px;color:var(--ink-faint);margin-top:2px}
+.osi-count{font-size:11px;color:var(--ink-faint);white-space:nowrap;padding-top:2px}
+.about-mini{background:var(--orange-light);border-radius:10px;padding:16px}
+.about-mini p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:10px}
+.about-link{font-size:12px;color:var(--orange);text-decoration:none;font-weight:500}
+footer{border-top:1px solid var(--border)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:13px;color:var(--ink-muted)}
+.footer-brand strong{color:var(--ink)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--ink-faint);text-decoration:none}
+.kh-bar{height:2px;background:var(--teal)}
+</style>
+</head>
+<body>
+<div class="accent-bar"></div>
+<nav><div class="nav-inner">
+  <a class="wordmark" href="../index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#articles">Articles</a></li>
+    <li><a href="index.html">Series</a></li>
+    <li><a href="../index.html#podcast">Podcast</a></li>
+    <li><a href="../index.html#events">Events</a></li>
+    <li><a href="../index.html#about">About</a></li>
+  </ul>
+</div></nav>
+<div class="breadcrumb">
+  <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+  <a href="index.html">Series</a><span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">Becoming a Learner</span>
+</div>
+<div class="series-hero"><div class="series-hero-inner">
+  <div>
+    <div class="series-eyebrow">BAL · Series</div>
+    <h1 class="series-title">Becoming a Learner</h1>
+    <p class="series-desc">After 15 years of teaching, the shift from teacher-identity to learner-identity changed everything. This series is personal — about what it actually means to keep learning when learning is your job.</p>
+    <div class="series-stats">
+      <div class="stat"><div class="stat-num">1</div><div class="stat-label">Episode</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-label">Published</div></div>
+    </div>
+  </div>
+  <div class="series-badge-large">
+    <span class="badge-code">BAL</span>
+    <span class="badge-label">Becoming<br>a Learner</span>
+  </div>
+</div></div>
+<div class="episode-list-wrap">
+  <div>
+    <div class="episodes-header"><span class="episodes-title">All episodes</span></div>
+    <div class="episode-card coming-soon">
+      <div class="ep-number">01</div>
+      <div>
+        <div class="ep-meta"><span class="ep-id" style="color:var(--ink-faint)">BAL-01</span><span class="ep-tag">Coming soon</span></div>
+        <div class="ep-title">Why I stopped calling myself a teacher</div>
+        <div class="ep-excerpt">After 15 years in the classroom, the label I held most tightly started to feel like a ceiling. Not because I stopped teaching — but because I started to understand what learning actually demands. This is the story of becoming a learner instead.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="series-sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-title">Other series</div>
+      <ul class="other-series">
+        <li><a class="other-series-item" href="lai.html"><div><div class="osi-code" style="color:#854F0B">LAI</div><div class="osi-name">Learning &amp; AI</div><div class="osi-desc">Critical lens · Vietnamese classroom</div></div><div class="osi-count">6 eps</div></a></li>
+        <li><a class="other-series-item" href="l5m.html"><div><div class="osi-code" style="color:#085041">L5M</div><div class="osi-name">Learning in 5 Minutes</div><div class="osi-desc">One concept · one action</div></div><div class="osi-count">4 eps</div></a></li>
+        <li><a class="other-series-item" href="twc.html"><div><div class="osi-code" style="color:#712B13">TWC</div><div class="osi-name">Thinkers Who Changed Ed.</div><div class="osi-desc">Dewey, Vygotsky, Freire…</div></div><div class="osi-count">2 eps</div></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-title">About this series</div>
+      <div class="about-mini">
+        <p>BAL is the most personal series on TBL — exploring the identity shift that happens when a teacher starts seriously studying learning. Honest, unresolved, and ongoing.</p>
+        <a class="about-link" href="../index.html#about">About Vy Phan →</a>
+      </div>
+    </div>
+  </aside>
+</div>
+<footer><div class="footer-inner">
+  <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+  <div class="footer-links"><a href="../index.html">← Home</a><a href="index.html">All series</a><a href="https://youtube.com" target="_blank">YouTube</a></div>
+</div></footer>
+<div class="kh-bar"></div>
+</body>
+</html>
