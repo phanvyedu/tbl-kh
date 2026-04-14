@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Horizon — Chân trời tri thức · Khoa học học tập cho người Việt</title>
+<meta name="description" content="Khoa học học tập, AI trong giáo dục và nghiên cứu giáo dục — viết cho giáo viên, học sinh và nhà nghiên cứu Việt Nam. Bởi Vy Phan, giáo viên EFL tại Đồng Nai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1A5C5C;
+  --teal-dark: #114040;
+  --teal-light: #E1F5EE;
+  --teal-mid: #5DCAA5;
+  --ink: #0F0E0C;
+  --ink-soft: #3A3835;
+  --ink-muted: #7A7872;
+  --ink-faint: #B8B5AF;
+  --paper: #F6FAF9;
+  --paper-warm: #EBF4F1;
+  --paper-mid: #D8EDE8;
+  --white: #FFFFFF;
+  --orange: #C4611A;
+  --border: rgba(26,92,92,0.12);
+  --border-soft: rgba(26,92,92,0.07);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.accent-bar { height: 3px; background: var(--teal); }
+
+/* SISTER BANNER */
+.sister-banner {
+  background: var(--teal-light);
+  border-bottom: 1px solid var(--border);
+  padding: 9px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.sister-banner span { font-size: 12px; color: #2A5050; }
+.sister-banner a {
+  font-size: 12px; font-weight: 500;
+  color: var(--teal); text-decoration: none;
+  white-space: nowrap;
+}
+.sister-banner a:hover { text-decoration: underline; }
+
+nav {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wordmark {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.wordmark-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--teal);
+  letter-spacing: 0.5px;
+}
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 400;
+  color: var(--ink-muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--teal); }
+.tbl-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  padding: 6px 13px;
+  background: transparent; color: var(--orange);
+  border: 1px solid rgba(196,97,26,0.4);
+  border-radius: 6px; cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.tbl-btn:hover { background: #FEF3E7; }
+
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'Lora', serif;
+  font-size: 36px; font-weight: 500;
+  line-height: 1.22; color: var(--ink);
+  margin-bottom: 20px; letter-spacing: -0.5px;
+}
+.hero-title em { font-style: italic; color: var(--teal); }
+.hero-body {
+  font-size: 15px; color: var(--ink-soft);
+  line-height: 1.68; margin-bottom: 28px;
+}
+.audience-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+.pill {
+  font-size: 12px; padding: 5px 13px;
+  border: 1px solid var(--border);
+  border-radius: 20px; background: var(--white);
+  color: var(--ink-muted); cursor: pointer;
+  transition: all 0.15s;
+}
+.pill:hover, .pill.active { background: var(--teal); color: white; border-color: var(--teal); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 500;
+  padding: 10px 22px; border-radius: 6px;
+  cursor: pointer; text-decoration: none;
+  display: inline-block; transition: all 0.15s;
+}
+.btn-primary { background: var(--teal); color: white; border: 1px solid var(--teal); }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-secondary { background: transparent; color: var(--ink-soft); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--ink-faint); color: var(--ink); }
+
+.hero-right { padding-bottom: 8px; }
+.hero-featured-label {
+  font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 12px; font-weight: 500;
+}
+.featured-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  cursor: pointer; transition: border-color 0.2s;
+}
+.featured-card:hover { border-color: var(--teal); }
+.featured-thumb {
+  height: 140px;
+  background: var(--paper-warm);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.thumb-pattern {
+  width: 100%; height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 20px,
+    rgba(26,92,92,0.05) 20px, rgba(26,92,92,0.05) 40px
+  );
+}
+.thumb-badge {
+  position: absolute; top: 14px; left: 14px;
+  font-size: 10px; font-weight: 500;
+  padding: 3px 9px; border-radius: 4px; letter-spacing: 0.3px;
+}
+.badge-ai { background: var(--teal-light); color: #085041; }
+.badge-hoc { background: #EEEDFE; color: #3C3489; }
+.badge-nc { background: #FAECE7; color: #712B13; }
+.badge-gv { background: #FEF3E7; color: #854F0B; }
+
+.featured-thumb-title {
+  position: absolute; bottom: 14px; left: 14px; right: 14px;
+  font-family: 'Lora', serif; font-size: 14px; font-weight: 500;
+  line-height: 1.35; color: var(--ink);
+}
+.featured-card-body { padding: 14px 16px; }
+.featured-excerpt {
+  font-size: 13px; color: var(--ink-soft);
+  line-height: 1.55; margin-bottom: 10px;
+}
+.featured-meta {
+  font-size: 11px; color: var(--ink-faint);
+  display: flex; gap: 10px; align-items: center;
+}
+.dot { width: 3px; height: 3px; background: var(--ink-faint); border-radius: 50%; }
+
+/* MAIN LAYOUT */
+.main-wrap {
+  max-width: 1100px;
+  margin: 0 auto; padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  border-bottom: 1px solid var(--border);
+}
+.feed { padding: 32px 40px 32px 0; border-right: 1px solid var(--border); }
+.section-header {
+  display: flex; align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.section-link { font-size: 12px; color: var(--teal); text-decoration: none; }
+.section-link:hover { text-decoration: underline; }
+
+.article {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 16px; padding: 20px 0;
+  border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: opacity 0.15s;
+}
+.article:last-child { border-bottom: none; }
+.article:hover { opacity: 0.8; }
+.article:hover .article-title { color: var(--teal); }
+.article-meta {
+  display: flex; gap: 8px; align-items: center;
+  margin-bottom: 7px; flex-wrap: wrap;
+}
+.article-title {
+  font-family: 'Lora', serif;
+  font-size: 16px; font-weight: 500;
+  line-height: 1.4; color: var(--ink);
+  margin-bottom: 7px; transition: color 0.15s;
+  letter-spacing: -0.2px;
+}
+.article-excerpt { font-size: 13px; color: var(--ink-muted); line-height: 1.55; }
+.article-date { font-size: 11px; color: var(--ink-faint); }
+.article-level {
+  font-size: 10px; padding: 2px 6px;
+  border-radius: 3px; background: var(--teal-light);
+  color: #085041;
+}
+.article-thumb {
+  width: 80px; height: 64px;
+  border-radius: 6px; background: var(--paper-warm);
+  flex-shrink: 0; overflow: hidden;
+}
+.thumb-mini {
+  width: 100%; height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg, transparent, transparent 8px,
+    rgba(26,92,92,0.07) 8px, rgba(26,92,92,0.07) 16px
+  );
+}
+
+/* SIDEBAR */
+.sidebar { padding: 32px 0 32px 32px; }
+.sidebar-block { margin-bottom: 32px; }
+.sidebar-title {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 14px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.series-list { list-style: none; }
+.series-item {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: opacity 0.15s;
+}
+.series-item:last-child { border-bottom: none; }
+.series-item:hover { opacity: 0.7; }
+.series-item:hover .si-name { color: var(--teal); }
+.si-left { flex: 1; }
+.si-code { font-size: 10px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 2px; }
+.si-name { font-family: 'Lora', serif; font-size: 13px; font-weight: 500; transition: color 0.15s; line-height: 1.3; }
+.si-desc { font-size: 11px; color: var(--ink-faint); margin-top: 2px; }
+.si-count { font-size: 11px; color: var(--ink-faint); white-space: nowrap; padding-top: 2px; }
+
+.video-card {
+  border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden; cursor: pointer; transition: border-color 0.2s;
+  margin-bottom: 12px;
+}
+.video-card:hover { border-color: var(--teal); }
+.video-thumb {
+  height: 100px; background: var(--paper-warm);
+  display: flex; align-items: center; justify-content: center; position: relative;
+}
+.play-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--teal); display: flex; align-items: center; justify-content: center;
+}
+.play-tri {
+  width: 0; height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid white; margin-left: 3px;
+}
+.vid-dur {
+  position: absolute; bottom: 8px; right: 8px;
+  font-size: 10px; background: rgba(15,14,12,0.7); color: white;
+  padding: 2px 6px; border-radius: 3px;
+}
+.video-info { padding: 10px 12px; }
+.video-title { font-family: 'Lora', serif; font-size: 13px; font-weight: 500; line-height: 1.35; margin-bottom: 4px; }
+.video-meta { font-size: 11px; color: var(--ink-faint); }
+
+.about-mini {
+  background: var(--teal-light); border-radius: 10px; padding: 16px;
+}
+.about-mini p { font-size: 13px; color: #2A5050; line-height: 1.6; margin-bottom: 12px; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 11px; padding: 3px 8px;
+  border: 1px solid rgba(26,92,92,0.25);
+  border-radius: 4px; color: #085041;
+}
+
+/* RESOURCES SECTION */
+.second-row {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.second-col { padding: 28px 28px 28px 0; border-right: 1px solid var(--border); }
+.second-col:last-child { border-right: none; padding-right: 0; padding-left: 28px; }
+.second-col:nth-child(2) { padding-left: 28px; }
+.second-col-title {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 16px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.podcast-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--border-soft);
+  cursor: pointer;
+}
+.podcast-item:last-child { border-bottom: none; }
+.pod-num { font-size: 11px; color: var(--ink-faint); min-width: 18px; margin-top: 2px; }
+.pod-title { font-size: 13px; line-height: 1.35; color: var(--ink); }
+.pod-dur { font-size: 11px; color: var(--ink-faint); margin-top: 3px; }
+
+.resource-item { padding: 10px 0; border-bottom: 1px solid var(--border-soft); cursor: pointer; }
+.resource-item:last-child { border-bottom: none; }
+.res-type {
+  font-size: 10px; padding: 2px 7px;
+  border-radius: 3px; background: var(--teal-light);
+  color: #085041; display: inline-block; margin-bottom: 5px;
+}
+.res-title { font-size: 13px; line-height: 1.35; color: var(--ink); }
+
+.tbl-callout { background: #FEF3E7; border-radius: 10px; padding: 16px; }
+.tbl-callout-title { font-size: 11px; font-weight: 500; color: var(--orange); margin-bottom: 8px; letter-spacing: 0.5px; }
+.tbl-callout p { font-size: 13px; color: #5A3010; line-height: 1.55; margin-bottom: 12px; }
+.btn-orange {
+  font-size: 12px; font-weight: 500;
+  padding: 8px 14px;
+  background: var(--orange); color: white;
+  border: none; border-radius: 6px; cursor: pointer;
+  text-decoration: none; display: inline-block;
+}
+.btn-orange:hover { background: #A8521A; }
+
+footer {
+  max-width: 1100px; margin: 0 auto;
+  padding: 20px 24px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-brand { font-size: 13px; color: var(--ink-muted); }
+.footer-brand strong { color: var(--ink); }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--ink-faint); text-decoration: none; }
+.footer-links a:hover { color: var(--ink); }
+.tbl-link { color: var(--orange) !important; font-weight: 500; }
+.orange-accent-bar { height: 2px; background: var(--orange); }
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<div class="sister-banner">
+  <span>Đây là kênh tiếng Việt — dành cho giáo viên, học sinh và nhà nghiên cứu Việt Nam</span>
+  <a href="../index.html">Kênh tiếng Anh: The Becoming Learners →</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">
+      Knowledge Horizon
+      <span class="wordmark-sub">Chân trời tri thức</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#articles">Bài viết</a></li>
+        <li><a href="#series">Chủ đề</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#resources">Tài nguyên</a></li>
+        <li><a href="#about">Về tôi</a></li>
+      </ul>
+      <a class="tbl-btn" href="../index.html">EN: TBL ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Khoa học học tập · AI trong giáo dục · Nghiên cứu giáo dục</div>
+    <h1 class="hero-title">Học tập có thể được hiểu bằng <em>khoa học</em> — và dạy học cũng vậy</h1>
+    <p class="hero-body">Dành cho giáo viên EFL, học sinh đại học và nhà nghiên cứu giáo dục Việt Nam. Các bài viết, video và tài nguyên dựa trên bằng chứng — không phải xu hướng.</p>
+    <div class="audience-pills">
+      <span class="pill active" onclick="togglePill(this)">Tất cả</span>
+      <span class="pill" onclick="togglePill(this)">Giáo viên</span>
+      <span class="pill" onclick="togglePill(this)">Học sinh · Sinh viên</span>
+      <span class="pill" onclick="togglePill(this)">Nghiên cứu sinh</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#articles">Khám phá bài viết →</a>
+      <a class="btn btn-secondary" href="https://youtube.com" target="_blank">Xem trên YouTube</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-featured-label">Bài viết nổi bật</div>
+    <div class="featured-card">
+      <div class="featured-thumb">
+        <div class="thumb-pattern"></div>
+        <span class="thumb-badge badge-ai">AI-GD · 03</span>
+        <div class="featured-thumb-title">AI có thay thế việc học không? Góc nhìn từ khoa học nhận thức</div>
+      </div>
+      <div class="featured-card-body">
+        <p class="featured-excerpt">Khi học sinh dùng ChatGPT để làm bài, não họ đang học hay đang tắt? Bài viết này xem xét lý thuyết tải nhận thức và effect of generation — từ góc nhìn lớp học tiếng Anh ở Việt Nam.</p>
+        <div class="featured-meta">
+          <span>14 tháng 4, 2026</span>
+          <span class="dot"></span>
+          <span>10 phút đọc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEED + SIDEBAR -->
+<div class="main-wrap" id="articles">
+  <div class="feed">
+    <div class="section-header">
+      <span class="section-title">Bài viết mới nhất</span>
+      <a class="section-link" href="#">Xem tất cả →</a>
+    </div>
+
+    <article class="article">
+      <div>
+        <div class="article-meta">
+          <span class="thumb-badge badge-hoc">HOC-KH · 05</span>
+          <span class="article-date">7 tháng 4, 2026</span>
+          <span class="article-level">Học sinh · Sinh viên</span>
+        </div>
+        <h2 class="article-title">Tại sao ôn bài vào phút chót không hiệu quả — và cách học đúng hơn</h2>
+        <p class="article-excerpt">Hiệu ứng khoảng cách (spacing effect) đã được nghiên cứu hơn 130 năm. Nhưng hầu hết học sinh Việt Nam vẫn đang học theo cách khoa học đã bác bỏ. Đây là lý do tại sao — và cách thay đổi.</p>
+      </div>
+      <div class="article-thumb"><div class="thumb-mini"></div></div>
+    </article>
+
+    <article class="article">
+      <div>
+        <div class="article-meta">
+          <span class="thumb-badge badge-nc">NC-GD · 02</span>
+          <span class="article-date">28 tháng 3, 2026</span>
+          <span class="article-level">Nghiên cứu sinh</span>
+        </div>
+        <h2 class="article-title">Viết luận văn không phải là chứng minh mình đúng — đây là điều tôi học được</h2>
+        <p class="article-excerpt">Sau nhiều năm trong chương trình tiến sĩ, điều thay đổi nhiều nhất không phải kiến thức mà là cách tôi hiểu về việc "biết một điều gì đó". Một bài suy ngẫm cá nhân về nghiên cứu giáo dục.</p>
+      </div>
+      <div class="article-thumb"><div class="thumb-mini"></div></div>
+    </article>
+
+    <article class="article">
+      <div>
+        <div class="article-meta">
+          <span class="thumb-badge badge-gv">GV-AI · 01</span>
+          <span class="article-date">15 tháng 3, 2026</span>
+          <span class="article-level">Giáo viên</span>
+        </div>
+        <h2 class="article-title">Giáo viên EFL và AI: đối thủ, công cụ, hay đồng nghiệp?</h2>
+        <p class="article-excerpt">Trong lớp học tiếng Anh ở Đồng Nai, AI không còn là tương lai — nó đã có mặt. Câu hỏi không còn là "có dùng không" mà là "dùng như thế nào mà không mất đi điều quan trọng nhất".</p>
+      </div>
+      <div class="article-thumb"><div class="thumb-mini"></div></div>
+    </article>
+
+    <article class="article">
+      <div>
+        <div class="article-meta">
+          <span class="thumb-badge badge-hoc">HOC-KH · 04</span>
+          <span class="article-date">5 tháng 3, 2026</span>
+          <span class="article-level">Tất cả</span>
+        </div>
+        <h2 class="article-title">Lý thuyết tải nhận thức của Sweller — hướng dẫn đọc cho giáo viên EFL</h2>
+        <p class="article-excerpt">Nếu bạn chỉ đọc một nghiên cứu về khoa học học tập trong năm nay, hãy đọc Sweller (1988). Đây là lý do tại sao — và ý nghĩa của nó với việc thiết kế bài tập có hỗ trợ AI.</p>
+      </div>
+      <div class="article-thumb"><div class="thumb-mini"></div></div>
+    </article>
+  </div>
+
+  <aside class="sidebar" id="series">
+    <div class="sidebar-block">
+      <div class="sidebar-title">Chủ đề</div>
+      <ul class="series-list">
+        <li class="series-item">
+          <div class="si-left">
+            <div class="si-code" style="color:#085041">AI-GD</div>
+            <div class="si-name">AI trong giáo dục</div>
+            <div class="si-desc">Lớp học VN · thực tế</div>
+          </div>
+          <div class="si-count">6 bài</div>
+        </li>
+        <li class="series-item">
+          <div class="si-left">
+            <div class="si-code" style="color:#3C3489">HOC-KH</div>
+            <div class="si-name">Khoa học học tập</div>
+            <div class="si-desc">Bằng chứng · áp dụng ngay</div>
+          </div>
+          <div class="si-count">5 bài</div>
+        </li>
+        <li class="series-item">
+          <div class="si-left">
+            <div class="si-code" style="color:#712B13">NC-GD</div>
+            <div class="si-name">Nghiên cứu giáo dục</div>
+            <div class="si-desc">Phương pháp · luận văn</div>
+          </div>
+          <div class="si-count">3 bài</div>
+        </li>
+        <li class="series-item">
+          <div class="si-left">
+            <div class="si-code" style="color:#854F0B">GV-AI</div>
+            <div class="si-name">Bản sắc nhà giáo</div>
+            <div class="si-desc">Góc nhìn · suy ngẫm</div>
+          </div>
+          <div class="si-count">2 bài</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Video nổi bật</div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="play-btn"><div class="play-tri"></div></div>
+          <span class="vid-dur">12:08</span>
+        </div>
+        <div class="video-info">
+          <div class="video-title">AI có thay thế việc học không?</div>
+          <div class="video-meta">AI-GD · 03 · Knowledge Horizon</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block" id="about">
+      <div class="sidebar-title">Về tôi</div>
+      <div class="about-mini">
+        <p>Giáo viên EFL tại Đồng Nai với hơn 15 năm kinh nghiệm, nghiên cứu sinh tiến sĩ giáo dục. Viết về khoa học học tập, AI trong giáo dục và thực tế lớp học Việt Nam — bằng tiếng Việt, cho người Việt.</p>
+        <div class="about-tags">
+          <span class="tag">EFL · Đồng Nai</span>
+          <span class="tag">Tiến sĩ giáo dục</span>
+          <span class="tag">Khoa học học tập</span>
+          <span class="tag">AI · lớp học</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- SECOND ROW -->
+<div class="second-row">
+  <div class="second-col" id="podcast">
+    <div class="second-col-title">Podcast</div>
+    <div class="podcast-item">
+      <span class="pod-num">03</span>
+      <div>
+        <div class="pod-title">AI gia sư và ảo giác "hiểu bài"</div>
+        <div class="pod-dur">38 phút · Tiếng Việt</div>
+      </div>
+    </div>
+    <div class="podcast-item">
+      <span class="pod-num">02</span>
+      <div>
+        <div class="pod-title">Lớp học Nho giáo và lý thuyết kiến tạo</div>
+        <div class="pod-dur">31 phút · Tiếng Việt</div>
+      </div>
+    </div>
+    <div class="podcast-item">
+      <span class="pod-num">01</span>
+      <div>
+        <div class="pod-title">Tại sao tôi nghiên cứu học tập sau 15 năm dạy học</div>
+        <div class="pod-dur">24 phút · Tiếng Việt</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="second-col" id="resources">
+    <div class="second-col-title">Tài nguyên</div>
+    <div class="resource-item">
+      <span class="res-type">Tài liệu</span>
+      <div class="res-title">Hướng dẫn spacing effect cho giáo viên EFL</div>
+    </div>
+    <div class="resource-item">
+      <span class="res-type">Danh sách đọc</span>
+      <div class="res-title">10 nghiên cứu về AI trong lớp học — tóm tắt tiếng Việt</div>
+    </div>
+    <div class="resource-item">
+      <span class="res-type">Workshop</span>
+      <div class="res-title">Bộ tài liệu: Khoa học học tập cho giáo viên 2026</div>
+    </div>
+  </div>
+
+  <div class="second-col">
+    <div class="second-col-title">The Becoming Learners</div>
+    <div class="tbl-callout">
+      <div class="tbl-callout-title">Kênh tiếng Anh — quốc tế</div>
+      <p>Cùng những ý tưởng và nghiên cứu, nhưng viết bằng tiếng Anh cho độc giả quốc tế. Góc nhìn Việt Nam là điểm khác biệt cốt lõi.</p>
+      <a class="btn-orange" href="../index.html">The Becoming Learners (EN) →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <strong>Knowledge Horizon</strong> — Chân trời tri thức · một phần của hệ sinh thái <strong>The Becoming Learners</strong> · Vy Phan
+  </div>
+  <div class="footer-links">
+    <a href="#">Bản tin</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="#about">Về tôi</a>
+    <a href="../index.html" class="tbl-link">The Becoming Learners (EN) →</a>
+  </div>
+</footer>
+<div class="orange-accent-bar"></div>
+
+<script>
+function togglePill(el) {
+  document.querySelectorAll('.audience-pills .pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
