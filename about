@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — The Becoming Learners · Vy Phan</title>
+<meta name="description" content="Vy Phan is an EFL educator with 15+ years in Vietnamese classrooms, a doctoral candidate in education, and the creator of The Becoming Learners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #C4611A;
+  --orange-light: #FEF3E7;
+  --ink: #0F0E0C;
+  --ink-soft: #3A3835;
+  --ink-muted: #7A7872;
+  --ink-faint: #B8B5AF;
+  --paper: #FAF8F4;
+  --paper-warm: #F2EFE8;
+  --white: #FFFFFF;
+  --teal: #1A5C5C;
+  --teal-light: #E1F5EE;
+  --border: rgba(15,14,12,0.10);
+  --border-soft: rgba(15,14,12,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+.accent-bar { height: 3px; background: var(--orange); }
+nav { background: var(--paper); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { font-family: 'Lora', serif; font-weight: 500; font-size: 17px; color: var(--ink); text-decoration: none; }
+.wordmark span { color: var(--orange); }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active { color: var(--ink); font-weight: 500; }
+.breadcrumb { max-width: 900px; margin: 0 auto; padding: 16px 24px 0; display: flex; gap: 8px; align-items: center; }
+.breadcrumb a { font-size: 13px; color: var(--ink-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--orange); }
+.breadcrumb-sep, .breadcrumb-current { font-size: 13px; color: var(--ink-faint); }
+
+/* HERO */
+.about-hero {
+  max-width: 900px; margin: 0 auto;
+  padding: 48px 24px 44px;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 48px;
+  align-items: start;
+  border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+.hero-name { font-family: 'Lora', serif; font-size: 38px; font-weight: 500; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 8px; }
+.hero-name-vi { font-family: 'Lora', serif; font-size: 18px; font-weight: 400; font-style: italic; color: var(--ink-muted); margin-bottom: 20px; }
+.hero-role { font-size: 15px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 24px; max-width: 480px; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { font-size: 11px; padding: 4px 11px; border: 1px solid var(--border); border-radius: 20px; color: var(--ink-muted); background: var(--white); }
+
+.avatar-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.avatar-img {
+  width: 160px; height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+}
+/* ============================================================
+   ĐỂ THAY ẢNH THẬT:
+   Thay src="#" bên dưới thành đường dẫn ảnh thật.
+   Ví dụ: src="../images/vy-phan.jpg"
+   ============================================================ */
+.avatar-placeholder {
+  width: 160px; height: 160px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #FAC775 0%, #C4611A 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px; font-weight: 500;
+  color: white; letter-spacing: -2px;
+  border: 1px solid rgba(196,97,26,0.2);
+}
+.avatar-name { font-size: 13px; font-weight: 500; text-align: center; }
+.avatar-handle { font-size: 11px; color: var(--ink-muted); text-align: center; }
+
+/* BODY */
+.about-body {
+  max-width: 900px; margin: 0 auto;
+  padding: 44px 24px;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 220px;
+  gap: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.prose p { font-size: 16px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 20px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose em { font-style: italic; }
+.prose strong { font-weight: 500; color: var(--ink); }
+
+.stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border-soft); }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { font-size: 12px; color: var(--ink-muted); }
+.stat-val { font-size: 13px; font-weight: 500; color: var(--ink); text-align: right; }
+
+/* TRIANGLE */
+.triangle-section { max-width: 900px; margin: 0 auto; padding: 44px 24px; border-bottom: 1px solid var(--border); }
+.section-title { font-family: 'Lora', serif; font-size: 24px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.3px; }
+.section-sub { font-size: 14px; color: var(--ink-muted); margin-bottom: 28px; line-height: 1.6; }
+.triangle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tri-card { padding: 22px; border: 1px solid var(--border); border-radius: 12px; border-top: 3px solid var(--tc, var(--orange)); }
+.tri-num { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--tc, var(--orange)); margin-bottom: 10px; }
+.tri-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 500; margin-bottom: 10px; line-height: 1.3; }
+.tri-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+
+/* VALUES */
+.values-section { max-width: 900px; margin: 0 auto; padding: 44px 24px; border-bottom: 1px solid var(--border); }
+.value-item { display: grid; grid-template-columns: 28px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-soft); align-items: flex-start; }
+.value-item:last-child { border-bottom: none; }
+.value-num { font-size: 13px; font-weight: 500; color: var(--orange); padding-top: 2px; }
+.value-title { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+.value-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+
+/* CONNECT */
+.connect-section { max-width: 900px; margin: 0 auto; padding: 44px 24px 56px; }
+.connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.connect-card {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.15s;
+}
+.connect-card:hover { border-color: var(--orange); }
+.cc-platform { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 5px; }
+.cc-label { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.cc-desc { font-size: 12px; color: var(--ink-muted); }
+.kh-callout { padding: 18px 20px; background: var(--teal-light); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.kh-left { }
+.kh-badge { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; }
+.kh-label { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.kh-desc { font-size: 12px; color: #2A5050; }
+.kh-btn { font-size: 12px; font-weight: 500; padding: 8px 16px; background: var(--teal); color: white; border-radius: 6px; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
+.kh-btn:hover { background: #144A4A; }
+
+footer { border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-brand { font-size: 13px; color: var(--ink-muted); }
+.footer-brand strong { color: var(--ink); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--ink-faint); text-decoration: none; }
+.kh-bar { height: 2px; background: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#articles">Articles</a></li>
+      <li><a href="series/index.html">Series</a></li>
+      <li><a href="index.html#podcast">Podcast</a></li>
+      <li><a href="index.html#events">Events</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">About</span>
+</div>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div>
+    <div class="hero-eyebrow">About</div>
+    <h1 class="hero-name">Phan Le Ngoc Vy</h1>
+    <p class="hero-name-vi">Phan Lê Ngọc Vy</p>
+    <p class="hero-role">EFL educator with over 15 years in Vietnamese classrooms. Doctoral candidate in education. Writer on learning science, AI in education, and the gap between theory and the classroom.</p>
+    <div class="hero-tags">
+      <span class="tag">EFL educator</span>
+      <span class="tag">Doctoral candidate</span>
+      <span class="tag">Learning science</span>
+      <span class="tag">AI in education</span>
+      <span class="tag">Vietnam</span>
+    </div>
+  </div>
+  <div class="avatar-wrap">
+    <!--
+      SAU KHI UPLOAD ẢNH LÊN GITHUB:
+      1. Xóa thẻ <img class="avatar-img" src="images/vy-phan.jpg" alt="Vy Phan" />
+      2. Bỏ comment thẻ <img> bên dưới
+      3. Đổi src thành đường dẫn ảnh của bạn
+
+      <img class="avatar-img" src="images/vy-phan.jpg" alt="Vy Phan" />
+    -->
+    <img class="avatar-img" src="images/vy-phan.jpg" alt="Vy Phan" />
+    <div class="avatar-name">Vy Phan</div>
+    <div class="avatar-handle">The Becoming Learners</div>
+  </div>
+</section>
+
+<!-- STORY + STATS -->
+<div class="about-body">
+  <div>
+    <div class="section-eyebrow">My story</div>
+    <div class="prose">
+      <p>I have been teaching English in Vietnam for over fifteen years. For most of that time, I believed I understood learning — because I was good at teaching. It took doctoral research to show me how much I didn't know.</p>
+      <p>The gap between what classroom intuition tells us and what learning science actually shows is wider than most educators realise. I started The Becoming Learners because I wanted to close that gap — for myself first, and then for anyone who cares about learning seriously.</p>
+      <p>I write from three positions simultaneously: <em>as a teacher</em> who has seen thousands of students struggle and succeed, <em>as a researcher</em> reading the literature carefully, and <em>as a learner</em> who is still figuring it out. I don't think any of those positions can be separated from the others.</p>
+      <p>I am particularly interested in what happens to learning in the age of AI — not as a technology story, but as a cognitive and human one. And I write from Vietnam deliberately, because the Vietnamese classroom changes the questions in ways that matter.</p>
+    </div>
+  </div>
+  <div>
+    <div class="section-eyebrow">At a glance</div>
+    <div class="stat-row"><span class="stat-label">Based in</span><span class="stat-val">Vietnam</span></div>
+    <div class="stat-row"><span class="stat-label">Teaching since</span><span class="stat-val">2010</span></div>
+    <div class="stat-row"><span class="stat-label">Doctoral program</span><span class="stat-val">Education</span></div>
+    <div class="stat-row"><span class="stat-label">Channel focus</span><span class="stat-val">Learning science</span></div>
+    <div class="stat-row"><span class="stat-label">Languages</span><span class="stat-val">Vietnamese · English</span></div>
+    <div class="stat-row"><span class="stat-label">Series active</span><span class="stat-val">LAI · L5M · TWC · BAL</span></div>
+  </div>
+</div>
+
+<!-- TRIANGLE OF EXPERTISE -->
+<section class="triangle-section">
+  <h2 class="section-title">Why this channel is different</h2>
+  <p class="section-sub">Most education content comes from one angle. TBL sits at the intersection of three.</p>
+  <div class="triangle-grid">
+    <div class="tri-card" style="--tc:#C4611A">
+      <div class="tri-num">01</div>
+      <div class="tri-title">Learning science knowledge</div>
+      <div class="tri-desc">Primary literature — Sweller, Krashen, Bjork, Roediger — not secondhand summaries. Evidence-based, not trend-based.</div>
+    </div>
+    <div class="tri-card" style="--tc:#1A5C5C">
+      <div class="tri-num">02</div>
+      <div class="tri-title">Vietnamese classroom reality</div>
+      <div class="tri-desc">15+ years of real classrooms in Vietnam. Confucian inheritance, EFL context, real students — not hypothetical ones.</div>
+    </div>
+    <div class="tri-card" style="--tc:#3C3489">
+      <div class="tri-num">03</div>
+      <div class="tri-title">Doctoral research perspective</div>
+      <div class="tri-desc">Currently in a doctoral program in education. Reading the field seriously, and being honest about what I don't yet know.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL PRINCIPLES -->
+<section class="values-section">
+  <h2 class="section-title">Editorial principles</h2>
+  <p class="section-sub">What I commit to in every article and video.</p>
+  <div class="value-item">
+    <span class="value-num">01</span>
+    <div>
+      <div class="value-title">Ground every claim in evidence</div>
+      <div class="value-desc">Every theoretical claim links to primary research. I cite the original paper, not a blog post about the paper.</div>
+    </div>
+  </div>
+  <div class="value-item">
+    <span class="value-num">02</span>
+    <div>
+      <div class="value-title">Resist both AI hype and AI panic</div>
+      <div class="value-desc">The LAI series exists because most AI-in-education discourse is either naive enthusiasm or defensive fear. Neither is useful thinking.</div>
+    </div>
+  </div>
+  <div class="value-item">
+    <span class="value-num">03</span>
+    <div>
+      <div class="value-title">Write honestly about uncertainty</div>
+      <div class="value-desc">The BAL series exists because I believe the most useful educators are the ones who admit what they're still learning.</div>
+    </div>
+  </div>
+  <div class="value-item">
+    <span class="value-num">04</span>
+    <div>
+      <div class="value-title">Keep the Vietnamese classroom visible</div>
+      <div class="value-desc">Most learning science content assumes a Western educational context. I write from Vietnam deliberately — it changes the questions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect-section">
+  <h2 class="section-title">Connect</h2>
+  <p class="section-sub">Where to find the work and how to follow along.</p>
+  <div class="connect-grid">
+    <a class="connect-card" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">
+      <div class="cc-platform">YouTube</div>
+      <div class="cc-label">The Becoming Learners</div>
+      <div class="cc-desc">Videos on learning science and AI in education</div>
+    </a>
+    <a class="connect-card" href="https://www.linkedin.com/in/phan-vy-0b090234b/" target="_blank">
+      <div class="cc-platform">LinkedIn</div>
+      <div class="cc-label">Phan Le Ngoc Vy</div>
+      <div class="cc-desc">Shorter insights and research notes</div>
+    </a>
+  </div>
+  <div class="kh-callout">
+    <div class="kh-left">
+      <div class="kh-badge">Knowledge Horizon · Kênh tiếng Việt</div>
+      <div class="kh-label">Chân trời tri thức</div>
+      <div class="kh-desc">Cùng những ý tưởng và nghiên cứu, viết bằng tiếng Việt cho giáo viên và học sinh Việt Nam.</div>
+    </div>
+    <a class="kh-btn" href="kh/index.html">Đến Knowledge Horizon →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="index.html">← Home</a>
+      <a href="https://www.youtube.com/@TheBecomingLearners" target="_blank">YouTube</a>
+      <a href="https://www.linkedin.com/in/phan-vy-0b090234b/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+
+</body>
+</html>
