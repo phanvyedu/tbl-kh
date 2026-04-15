@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podcast — The Becoming Learners · Vy Phan</title>
+<meta name="description" content="The Becoming Learners podcast — conversations on learning science, AI in education, and what it means to keep learning when teaching is your job.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#C4611A;--orange-light:#FEF3E7;--ink:#0F0E0C;--ink-soft:#3A3835;
+  --ink-muted:#7A7872;--ink-faint:#B8B5AF;--paper:#FAF8F4;--paper-warm:#F2EFE8;
+  --white:#FFFFFF;--teal:#1A5C5C;--border:rgba(15,14,12,0.10);
+  --border-soft:rgba(15,14,12,0.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.accent-bar{height:3px;background:var(--orange)}
+nav{background:var(--paper);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-family:'Lora',serif;font-weight:500;font-size:17px;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500}
+
+/* HERO */
+.podcast-hero{max-width:1100px;margin:0 auto;padding:48px 24px 44px;display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.hero-title{font-family:'Lora',serif;font-size:36px;font-weight:500;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px}
+.hero-desc{font-size:15px;color:var(--ink-muted);line-height:1.7;margin-bottom:24px;max-width:480px}
+.platform-links{display:flex;gap:10px;flex-wrap:wrap}
+.platform-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;padding:8px 14px;border:1px solid var(--border);border-radius:7px;text-decoration:none;color:var(--ink-soft);background:var(--white);transition:border-color 0.15s}
+.platform-btn:hover{border-color:var(--orange);color:var(--orange)}
+.platform-icon{width:16px;height:16px;border-radius:3px;flex-shrink:0}
+.podcast-cover{width:240px;height:240px;border-radius:16px;background:linear-gradient(135deg,#FAC775 0%,#C4611A 50%,#712B13 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;flex-shrink:0}
+.cover-title{font-family:'Lora',serif;font-size:15px;font-weight:500;color:white;text-align:center;line-height:1.3;padding:0 20px}
+.cover-sub{font-size:11px;color:rgba(255,255,255,0.65);text-align:center}
+
+/* EPISODES */
+.episodes-section{max-width:1100px;margin:0 auto;padding:40px 24px 64px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px}
+.episodes-main{}
+.section-eyebrow{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+
+/* EPISODE CARD */
+.ep-card{display:grid;grid-template-columns:52px 1fr auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--border-soft);align-items:start;cursor:pointer;transition:opacity 0.15s}
+.ep-card:last-child{border-bottom:none}
+.ep-card:hover{opacity:0.75}
+.ep-card.coming{opacity:0.5;cursor:default}
+.ep-card.coming:hover{opacity:0.5}
+.ep-num-badge{width:44px;height:44px;border-radius:8px;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--ink-muted);flex-shrink:0;border:1px solid var(--border)}
+.ep-num-badge.latest{background:var(--orange);color:white;border-color:var(--orange)}
+.ep-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px;flex-wrap:wrap}
+.ep-tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:3px;letter-spacing:0.3px}
+.ep-tag-en{background:#E6F1FB;color:#185FA5}
+.ep-tag-envi{background:#EAF3DE;color:#3B6D11}
+.ep-tag-soon{background:var(--paper-warm);color:var(--ink-faint)}
+.ep-date{font-size:11px;color:var(--ink-faint)}
+.ep-title{font-family:'Lora',serif;font-size:16px;font-weight:500;color:var(--ink);margin-bottom:5px;line-height:1.4}
+.ep-desc{font-size:13px;color:var(--ink-muted);line-height:1.55}
+.ep-dur{font-size:12px;color:var(--ink-faint);white-space:nowrap;padding-top:14px}
+.play-btn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--orange);margin-top:10px;text-decoration:none}
+.play-btn svg{width:14px;height:14px;fill:var(--orange)}
+
+/* SIDEBAR */
+.podcast-sidebar{}
+.sidebar-block{margin-bottom:28px}
+.sidebar-title{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.sidebar-desc{font-size:13px;color:var(--ink-muted);line-height:1.65;margin-bottom:16px}
+.sidebar-stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-soft);font-size:13px}
+.sidebar-stat-row:last-child{border-bottom:none}
+.stat-l{color:var(--ink-muted)}
+.stat-r{font-weight:500;color:var(--ink)}
+.subscribe-box{background:var(--paper-warm);border-radius:10px;padding:18px}
+.sub-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.sub-desc{font-size:12px;color:var(--ink-muted);line-height:1.5;margin-bottom:14px}
+.sub-links{display:flex;flex-direction:column;gap:8px}
+.sub-link{font-size:12px;font-weight:500;color:var(--orange);text-decoration:none;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--white);display:block;transition:border-color 0.15s}
+.sub-link:hover{border-color:var(--orange)}
+
+footer{border-top:1px solid var(--border)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:13px;color:var(--ink-muted)}
+.footer-brand strong{color:var(--ink)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--ink-faint);text-decoration:none}
+.kh-bar{height:2px;background:var(--teal)}
+
+@media(max-width:720px){
+  .podcast-hero{grid-template-columns:1fr;gap:24px}
+  .podcast-cover{width:160px;height:160px}
+  .episodes-section{grid-template-columns:1fr}
+  .ep-card{grid-template-columns:44px 1fr}
+  .ep-dur{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#articles">Articles</a></li>
+      <li><a href="series/index.html">Series</a></li>
+      <li><a href="podcast.html" class="active">Podcast</a></li>
+      <li><a href="index.html#events">Events</a></li>
+      <li><a href="https://phanvyedu.github.io/portfolio/" target="_blank">Portfolio ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="podcast-hero">
+  <div>
+    <div class="hero-eyebrow">The Becoming Learners · Podcast</div>
+    <h1 class="hero-title">Learning science,<br>honestly told</h1>
+    <p class="hero-desc">Conversations on how people learn, what AI does to that, and what it means to keep becoming a learner — from a Vietnamese EFL classroom and doctoral research perspective.</p>
+    <div class="platform-links">
+      <a class="platform-btn" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        YouTube
+      </a>
+      <a class="platform-btn" href="https://open.spotify.com" target="_blank">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.28c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-2.04-8.1-2.58-11.88-1.44-.48.12-.96-.12-1.08-.6-.12-.48.12-.96.6-1.08 4.38-1.32 9.78-.66 13.5 1.62.36.24.54.78.12 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.12-1.38-.72-.18-.6.12-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.24z"/></svg>
+        Spotify
+      </a>
+      <a class="platform-btn" href="https://podcasts.apple.com" target="_blank">
+        <svg class="platform-icon" viewBox="0 0 24 24" fill="#872EC4"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.598.12 2.116.006 2.748a8.829 8.829 0 01-2.962 5.604c-.432.389-.468.414-.834.602-.408.199-.924.177-1.338-.048-.48-.258-.797-.72-.853-1.2-.049-.42.093-.846.438-1.266.35-.427.526-.855.54-1.29.024-.642-.174-1.218-.635-1.855C14.12 13.15 13.2 12.68 12 12.68s-2.12.47-2.607 1.163c-.461.637-.659 1.213-.635 1.855.014.435.19.863.54 1.29.345.42.487.845.438 1.267-.056.48-.373.94-.853 1.199-.414.225-.93.247-1.338.048-.366-.188-.402-.213-.834-.602A8.829 8.829 0 013.749 13.3c-.114-.633-.114-2.15.006-2.748.352-1.773 1.04-3.12 2.264-4.392C7.627 4.475 9.74 3.568 12 3.568zm0 1.704c-1.83 0-3.588.738-4.866 2.052-.924.954-1.476 2.04-1.752 3.42-.09.444-.09 1.74-.006 2.22.27 1.55.942 2.85 2.016 3.905.285.279.486.44.614.49l.012.005a.27.27 0 00.082.015c.032 0 .06-.008.085-.02a.258.258 0 00.064-.048c.006-.008.012-.016.016-.024.03-.047.035-.1.018-.154a.258.258 0 00-.076-.113c-.422-.497-.632-1.014-.632-1.563 0-.8.378-1.548 1.04-2.163C9.52 12.79 10.728 12.4 12 12.4s2.48.39 3.283 1.12c.662.615 1.04 1.362 1.04 2.163 0 .549-.21 1.066-.632 1.563a.258.258 0 00-.076.113.26.26 0 00.018.154.258.258 0 00.08.072.27.27 0 00.082.015c.032 0 .06-.008.085-.02l.012-.005c.128-.05.329-.211.614-.49 1.074-1.056 1.746-2.356 2.016-3.904.084-.481.084-1.777-.006-2.221-.276-1.38-.828-2.466-1.752-3.42-1.278-1.314-3.036-2.052-4.866-2.052zm0 2.04a3.594 3.594 0 110 7.188 3.594 3.594 0 010-7.188zm0 1.44a2.154 2.154 0 100 4.308 2.154 2.154 0 000-4.308z"/></svg>
+        Apple Podcasts
+      </a>
+    </div>
+  </div>
+  <div class="podcast-cover">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="rgba(255,255,255,0.8)"><path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3zm-1 3a1 1 0 012 0v7a1 1 0 01-2 0V5zm-6 7a1 1 0 012 0 5 5 0 0010 0 1 1 0 012 0 7 7 0 01-6 6.93V21h2a1 1 0 010 2H9a1 1 0 010-2h2v-2.07A7 7 0 015 12z"/></svg>
+    <div class="cover-title">The Becoming Learners</div>
+    <div class="cover-sub">by Vy Phan</div>
+  </div>
+</div>
+
+<!-- EPISODES + SIDEBAR -->
+<div class="episodes-section">
+  <div class="episodes-main">
+    <div class="section-eyebrow">All episodes</div>
+
+    <!-- EP 03 -->
+    <div class="ep-card" onclick="window.open('https://www.youtube.com/@TheBecomingLearners','_blank')">
+      <div class="ep-num-badge latest">03</div>
+      <div>
+        <div class="ep-meta">
+          <span class="ep-tag ep-tag-en">EN</span>
+          <span class="ep-date">Apr 2026</span>
+        </div>
+        <div class="ep-title">AI tutors and the illusion of understanding</div>
+        <div class="ep-desc">When an AI tutor explains something clearly, the student feels like they understand. But feeling like you understand and actually understanding are different things — and the gap between them is where learning either happens or doesn't.</div>
+        <a class="play-btn" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch on YouTube
+        </a>
+      </div>
+      <div class="ep-dur">34 min</div>
+    </div>
+
+    <!-- EP 02 -->
+    <div class="ep-card" onclick="window.open('https://www.youtube.com/@TheBecomingLearners','_blank')">
+      <div class="ep-num-badge">02</div>
+      <div>
+        <div class="ep-meta">
+          <span class="ep-tag ep-tag-en">EN</span>
+          <span class="ep-date">Mar 2026</span>
+        </div>
+        <div class="ep-title">Confucian classrooms and constructivist theory</div>
+        <div class="ep-desc">What happens when educational theory built on Western assumptions about the learner meets the reality of a Vietnamese classroom? A conversation about Vygotsky, face-concern, and what "participation" actually means.</div>
+        <a class="play-btn" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch on YouTube
+        </a>
+      </div>
+      <div class="ep-dur">28 min</div>
+    </div>
+
+    <!-- EP 01 -->
+    <div class="ep-card" onclick="window.open('https://www.youtube.com/@TheBecomingLearners','_blank')">
+      <div class="ep-num-badge">01</div>
+      <div>
+        <div class="ep-meta">
+          <span class="ep-tag ep-tag-envi">EN · VI</span>
+          <span class="ep-date">Mar 2026</span>
+        </div>
+        <div class="ep-title">Why I study learning after 15 years of teaching</div>
+        <div class="ep-desc">The question that started this channel: if I have been teaching for fifteen years, why do I know so little about how people actually learn? An honest conversation about the expert blind spot, and what doctoral research is doing to my sense of professional competence.</div>
+        <a class="play-btn" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch on YouTube
+        </a>
+      </div>
+      <div class="ep-dur">22 min</div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="podcast-sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-title">About this podcast</div>
+      <p class="sidebar-desc">Short, honest conversations on learning science, AI in education, and the real experience of being a Vietnamese EFL educator in a doctoral programme. No expert performance — just genuine thinking in progress.</p>
+      <div class="sidebar-stat-row"><span class="stat-l">Episodes</span><span class="stat-r">3 published</span></div>
+      <div class="sidebar-stat-row"><span class="stat-l">Language</span><span class="stat-r">English · Vietnamese</span></div>
+      <div class="sidebar-stat-row"><span class="stat-l">Format</span><span class="stat-r">Solo + conversation</span></div>
+      <div class="sidebar-stat-row"><span class="stat-l">Length</span><span class="stat-r">20–40 min</span></div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="subscribe-box">
+        <div class="sub-title">Subscribe</div>
+        <p class="sub-desc">New episodes whenever there is something worth saying. Follow on your preferred platform.</p>
+        <div class="sub-links">
+          <a class="sub-link" href="https://www.youtube.com/@TheBecomingLearners" target="_blank">YouTube →</a>
+          <a class="sub-link" href="https://open.spotify.com" target="_blank">Spotify →</a>
+          <a class="sub-link" href="https://podcasts.apple.com" target="_blank">Apple Podcasts →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Related articles</div>
+      <a href="articles/lai-01.html" style="display:block;padding:10px 0;border-bottom:1px solid var(--border-soft);text-decoration:none;">
+        <div style="font-size:10px;color:var(--ink-faint);margin-bottom:3px">LAI-01</div>
+        <div style="font-size:13px;color:var(--ink);line-height:1.4">Does AI make us better learners — or just faster forgetters?</div>
+      </a>
+      <a href="articles/lai-03.html" style="display:block;padding:10px 0;border-bottom:1px solid var(--border-soft);text-decoration:none;">
+        <div style="font-size:10px;color:var(--ink-faint);margin-bottom:3px">LAI-03</div>
+        <div style="font-size:13px;color:var(--ink);line-height:1.4">The Confucian classroom meets the AI tutor</div>
+      </a>
+      <a href="articles/bal-01.html" style="display:block;padding:10px 0;text-decoration:none;">
+        <div style="font-size:10px;color:var(--ink-faint);margin-bottom:3px">BAL-01</div>
+        <div style="font-size:13px;color:var(--ink);line-height:1.4">Why I stopped calling myself a teacher</div>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="index.html">← Home</a>
+      <a href="https://www.youtube.com/@TheBecomingLearners" target="_blank">YouTube</a>
+      <a href="https://www.linkedin.com/in/phan-vy-0b090234b/" target="_blank">LinkedIn</a>
+      <a href="kh/index.html">Knowledge Horizon →</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+
+</body>
+</html>
