@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Stopped Calling Myself a Teacher — The Becoming Learners</title>
+<meta name="description" content="After 15 years in Vietnamese classrooms, the label I held most tightly started to feel like a ceiling. This is the honest story of what changed — and why it led to this channel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#C4611A;--orange-light:#FEF3E7;--ink:#0F0E0C;--ink-soft:#3A3835;
+  --ink-muted:#7A7872;--ink-faint:#B8B5AF;--paper:#FAF8F4;--paper-warm:#F2EFE8;
+  --white:#FFFFFF;--teal:#1A5C5C;--border:rgba(15,14,12,0.10);
+  --border-soft:rgba(15,14,12,0.06);
+  --series-color:#3C3489;--series-bg:#EEEDFE;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.accent-bar{height:3px;background:var(--orange)}
+nav{background:var(--paper);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-family:'Lora',serif;font-weight:500;font-size:17px;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.breadcrumb{max-width:720px;margin:0 auto;padding:20px 24px 0;display:flex;gap:8px;align-items:center}
+.breadcrumb a{font-size:13px;color:var(--ink-muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--orange)}
+.breadcrumb-sep,.breadcrumb-current{font-size:13px;color:var(--ink-faint)}
+.article-header{max-width:720px;margin:0 auto;padding:32px 24px 40px;border-bottom:1px solid var(--border)}
+.article-meta{display:flex;gap:10px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+.series-badge{font-size:11px;font-weight:500;padding:4px 11px;border-radius:5px;letter-spacing:0.3px;background:var(--series-bg);color:var(--series-color)}
+.article-date,.read-time{font-size:13px;color:var(--ink-muted)}
+.meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%}
+.article-title{font-family:'Lora',serif;font-size:38px;font-weight:500;line-height:1.18;color:var(--ink);margin-bottom:16px;letter-spacing:-0.8px}
+.article-subtitle{font-family:'Lora',serif;font-size:19px;font-weight:400;font-style:italic;color:var(--ink-muted);margin-bottom:24px;line-height:1.45}
+.article-byline{display:flex;align-items:center;gap:12px}
+.byline-avatar{width:38px;height:38px;border-radius:50%;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--orange);flex-shrink:0}
+.byline-name{font-size:14px;font-weight:500;color:var(--ink)}
+.byline-role{font-size:12px;color:var(--ink-muted);margin-top:1px}
+.hero-image-wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.hero-image-wrap img{width:100%;height:340px;object-fit:cover;border-radius:12px;margin-top:32px;display:block}
+.image-credit{font-size:11px;color:var(--ink-faint);margin-top:6px;text-align:right}
+.image-credit a{color:var(--ink-faint);text-decoration:none}
+.status-intro{max-width:720px;margin:0 auto;padding:0 24px 32px}
+.status-box{background:var(--series-bg);border-left:3px solid var(--series-color);border-radius:0 8px 8px 0;padding:18px 20px;margin-top:32px}
+.status-box p{font-size:14px;color:#3C3489;line-height:1.65;font-style:italic;opacity:0.85}
+.article-body{max-width:720px;margin:0 auto;padding:0 24px 48px}
+.article-body p{font-size:17px;line-height:1.85;color:var(--ink-soft);margin-bottom:26px}
+.article-body h2{font-family:'Lora',serif;font-size:24px;font-weight:500;color:var(--ink);margin:44px 0 18px;letter-spacing:-0.3px;line-height:1.3}
+.article-body blockquote{border-left:3px solid var(--series-color);margin:36px 0;padding:4px 0 4px 24px}
+.article-body blockquote p{font-family:'Lora',serif;font-size:19px;font-style:italic;color:var(--ink-soft);margin:0;line-height:1.65}
+.article-body strong{font-weight:500;color:var(--ink)}
+.article-body em{font-style:italic}
+.research-box{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--series-color);border-radius:0 10px 10px 0;padding:20px 24px;margin:32px 0}
+.research-label{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--series-color);margin-bottom:10px}
+.research-box p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:8px}
+.research-box p:last-child{margin-bottom:0}
+.research-cite{font-size:12px;color:var(--ink-faint);font-style:italic}
+.honest-box{background:var(--series-bg);border-radius:10px;padding:22px 24px;margin:36px 0}
+.honest-label{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--series-color);margin-bottom:12px}
+.honest-box p{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:12px;font-style:italic}
+.honest-box p:last-child{margin-bottom:0}
+.article-signoff{margin-top:52px;padding-top:28px;border-top:1px solid var(--border)}
+.signoff-text{font-family:'Lora',serif;font-size:17px;font-weight:500;font-style:italic;color:var(--ink);margin-bottom:4px}
+.signoff-name{font-size:14px;color:var(--ink-muted)}
+.next-episode{max-width:720px;margin:0 auto;padding:0 24px 48px}
+.next-label{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.next-card{display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 22px;text-decoration:none;color:inherit;transition:border-color 0.2s}
+.next-card:hover{border-color:var(--series-color)}
+.next-series{font-size:11px;color:var(--series-color);font-weight:500;margin-bottom:4px}
+.next-title{font-family:'Lora',serif;font-size:16px;font-weight:500;color:var(--ink)}
+.next-arrow{font-size:20px;color:var(--ink-faint)}
+footer{border-top:1px solid var(--border)}
+.article-footer{max-width:1100px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:13px;color:var(--ink-muted)}
+.footer-brand strong{color:var(--ink)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--ink-faint);text-decoration:none}
+.kh-bar{height:2px;background:var(--teal)}
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html">The Becoming Learners <span>·</span> <span style="font-size:13px;color:#7A7872;font-family:'DM Sans',sans-serif;font-weight:300">by Vy Phan</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="../series/index.html">Series</a></li>
+      <li><a href="../index.html#podcast">Podcast</a></li>
+      <li><a href="../index.html#events">Events</a></li>
+      <li><a href="https://phanvyedu.github.io/portfolio/" target="_blank">Portfolio ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="../series/bal.html">Becoming a Learner</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">BAL-01</span>
+</div>
+
+<header class="article-header">
+  <div class="article-meta">
+    <span class="series-badge">BAL · Episode 01</span>
+    <span class="meta-dot"></span>
+    <span class="article-date">Becoming a Learner</span>
+    <span class="meta-dot"></span>
+    <span class="read-time">11 min read</span>
+  </div>
+  <h1 class="article-title">Why I Stopped Calling Myself a Teacher</h1>
+  <p class="article-subtitle">After fifteen years in Vietnamese classrooms, the label I had built my life around started to feel like a ceiling. This is the honest story of what changed — and what I am still figuring out.</p>
+  <div class="article-byline">
+    <div class="byline-avatar">VP</div>
+    <div>
+      <div class="byline-name">Vy Phan</div>
+      <div class="byline-role">EFL Educator · Doctoral Candidate in Education · Vietnam</div>
+    </div>
+  </div>
+</header>
+
+<div class="hero-image-wrap">
+  <img
+    src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1400&q=80&auto=format&fit=crop&crop=center"
+    alt="A notebook open on a desk — the space for honest reflection, not performance"
+  />
+  <p class="image-credit">
+    Photo by <a href="https://unsplash.com/@thoughtcatalog" target="_blank">Thought Catalog</a> on <a href="https://unsplash.com" target="_blank">Unsplash</a> · Free to use
+  </p>
+</div>
+
+<div class="status-intro">
+  <div class="status-box">
+    <p>This series is a journal, not a lecture. BAL — Becoming a Learner — is where I write honestly about what it is actually like to be in the middle of a significant learning process, rather than looking back on it from a position of having figured it out. I have not figured it out. That is the point.</p>
+  </div>
+</div>
+
+<main class="article-body">
+
+  <p>For a long time, if someone asked me what I did, I answered without hesitation: I am a teacher. Not "I teach English" or "I work in education." I am a teacher. The label felt earned. It felt stable. After fifteen years in Vietnamese classrooms — in Đồng Nai, working with students ranging from teenagers preparing for university entrance exams to adults trying to build professional careers in English — it felt like the truest thing I could say about myself.</p>
+
+  <p>I am not sure when it started to feel different. There was no single moment. It was more like a slow accumulation of questions I did not have good answers to. Questions that, as long as I remained comfortably inside the identity of "teacher," I did not have to sit with too long.</p>
+
+  <p>Questions like: do my students actually retain what I teach them, or do they retain it just long enough to pass the test and then forget? When I explain something clearly and they seem to understand — is that understanding, or is it something that looks like understanding but disappears under real conditions? What is the difference? And more uncomfortable still: have I been teaching for fifteen years in ways that feel effective but might not be — because I never looked carefully at what the research says about how people actually learn?</p>
+
+  <p>I did not like sitting with those questions. They had a way of making fifteen years of accumulated professional confidence feel unstable.</p>
+
+  <h2>The Moment I Could Not Answer a Student's Question</h2>
+
+  <p>There was one specific moment I keep returning to. A student — a young woman preparing for her IELTS exam, sharp and determined — asked me something during a feedback session on her writing. She had been studying for months. Her vocabulary was improving. Her grammar was more controlled. But her score on practice tests was not moving the way either of us expected.</p>
+
+  <p>"Why am I not improving faster?" she asked. "I'm studying every day."</p>
+
+  <p>I gave her the answer I always gave: keep practising, review your feedback, read more widely, build your vocabulary. It was not wrong advice. But as I said it, I heard myself saying it — and I noticed that I was drawing on fifteen years of intuition and habit, not on any actual understanding of how memory, learning, and skill acquisition work. I did not know why she was not improving faster. I had a collection of strategies that had worked for various students over the years. I did not have a framework for understanding which ones worked, why they worked, or how to diagnose what was happening in her specific case.</p>
+
+  <p>She thanked me and left. I sat with the feeling for a long time afterward.</p>
+
+  <blockquote>
+    <p>I had been teaching for fifteen years. I knew a great deal about English. I knew very little about learning.</p>
+  </blockquote>
+
+  <h2>The Expert Blind Spot</h2>
+
+  <p>There is a concept in educational psychology called the <strong>expert blind spot</strong> — the phenomenon by which expertise in a domain actually impairs the ability to teach that domain, because the expert has automatised so much of their knowledge that they can no longer perceive what it is like not to know it. The connections that feel obvious to the expert were once laboriously constructed, and the expert has forgotten the construction process.</p>
+
+  <div class="research-box">
+    <div class="research-label">Research context</div>
+    <p>Nathan and Petrosino (2003) documented the expert blind spot in mathematics teachers, finding that content expertise predicted overestimation of student performance — more knowledgeable teachers were less accurate at predicting where students would struggle. The mechanism: expert knowledge is highly interconnected and automatised, making it genuinely difficult to reconstruct the experience of not having it. Expertise in a domain and expertise in teaching that domain are different competencies, and the first does not guarantee the second.</p>
+    <p class="research-cite">Nathan, M. J., &amp; Petrosino, A. (2003). Expert blind spot among preservice teachers. <em>American Educational Research Journal, 40</em>(4), 905–928.</p>
+  </div>
+
+  <p>Reading about this concept for the first time — in the early stages of my doctoral programme — I felt the particular discomfort of recognition. Not abstract recognition. Personal recognition. I had been operating with an expert blind spot for fifteen years, possibly longer. I had been explaining things in ways that made sense to me — that were clear and logical from inside my own understanding — without any systematic way of knowing whether they made sense to a learner who did not yet have that understanding.</p>
+
+  <p>This was uncomfortable to acknowledge. It is still uncomfortable to write.</p>
+
+  <h2>What Doctoral Research Did — and Did Not — Fix</h2>
+
+  <p>I want to be honest about what entering a doctoral programme has and has not changed, because I think there is a version of this story that would be dishonest.</p>
+
+  <p>The dishonest version goes: I realised I did not know enough, I started studying learning science seriously, and now I understand how people learn and can teach much more effectively. It resolves neatly. It has a clear before and after.</p>
+
+  <p>The honest version is messier. Yes, reading Bjork and Roediger and Sweller and Vygotsky has given me frameworks I did not have before. Yes, understanding the generation effect, cognitive load theory, and the spacing effect has changed specific things I do in the classroom. But it has also multiplied the number of things I am uncertain about. It has made the gap between what I know and what I do not know more visible, not less.</p>
+
+  <div class="honest-box">
+    <div class="honest-label">Things I am genuinely uncertain about, after 15+ years of teaching and doctoral research</div>
+    <p>Whether the classroom community I work in has the psychological conditions — low enough face-concern, enough trust — for genuine learning to happen rather than performance of learning.</p>
+    <p>Whether my feedback is being internalised or being used to complete assignments and then discarded.</p>
+    <p>Whether understanding learning science has made me a better teacher, or made me more aware of how far my practice still falls short of what the research suggests is optimal.</p>
+    <p>Whether what I feel as professional expertise is earned insight or accumulated habit I have never examined carefully enough.</p>
+  </div>
+
+  <p>That list is not a confession of failure. It is, I think, what genuine professional growth looks like — not the replacement of uncertainty with confidence, but the replacement of unreflective confidence with more precise and productive uncertainty.</p>
+
+  <h2>The Identity Shift: From Teacher to Learner</h2>
+
+  <p>Here is what I mean when I say I stopped calling myself a teacher.</p>
+
+  <p>I did not stop teaching. I am in the classroom five days a week. I am still, in the most practical sense, a teacher. What changed is the primary lens through which I understand what I am doing there — and what I am accountable for.</p>
+
+  <p>When I held "teacher" as my primary identity, my sense of professional competence was organised around what I knew and what I could explain. The teacher is the one who has the knowledge. The student is the one who needs it. My job was to transfer it effectively. In that frame, a lesson that felt clear and well-structured was evidence of doing my job well.</p>
+
+  <p>The shift was toward holding "learner" as the primary identity — where the central question is not "did I explain this well?" but "did they learn it?" And where being willing to not-know, to be publicly uncertain, to demonstrate what it looks like to sit with a hard question rather than reach immediately for a prepared answer, is part of the job rather than a failure of preparation.</p>
+
+  <div class="research-box">
+    <div class="research-label">Research context</div>
+    <p>Dweck's work on mindset — distinguishing between fixed and growth orientations — has been applied to teacher identity as well as student learning. Teachers who hold strong fixed-competence identities around their subject expertise tend to avoid professional development that threatens that identity and to model, inadvertently, the performance of competence rather than the genuine pursuit of understanding. Teachers who maintain a growth orientation toward their own learning — who model productive struggle, honest uncertainty, and revision of understanding — create different classroom conditions.</p>
+    <p class="research-cite">Dweck, C. S. (2006). <em>Mindset: The new psychology of success.</em> Random House.</p>
+  </div>
+
+  <p>This is not about performing vulnerability. I am wary of the version of this shift that becomes its own kind of performance — the teacher who makes a show of uncertainty as a pedagogical technique. What I am reaching for is something more structural: building a professional identity that is genuinely organised around learning rather than around the display of knowing.</p>
+
+  <h2>Why This Channel Exists</h2>
+
+  <p>The Becoming Learners exists because I needed somewhere to think out loud — publicly, with accountability — about what I am learning and what I am uncertain about. Not as a polished expert sharing expertise, but as someone in the middle of a genuine process.</p>
+
+  <p>I am aware of the irony. This channel involves me presenting information, making arguments, citing research, explaining concepts. On any given day it probably looks more like a lecture than a journal. But the intention underneath it is different from expert-to-learner transmission. The intention is to think in public — to work through questions I do not have settled answers to, and to do that in a form that might be useful to educators, researchers, and learners who are navigating similar questions.</p>
+
+  <p>What qualifies me to do this is not that I have figured out how people learn and am ready to share the findings. It is that I have been in Vietnamese classrooms for fifteen years, I am now taking learning science seriously in a way I did not before, and I am willing to be honest about the gap between those two things. That gap is, I think, worth writing about.</p>
+
+  <p>The name — The Becoming Learners — is not accidental. Becoming is a continuous present tense. It is not arrived at. It is the process itself.</p>
+
+  <h2>A Note on Honesty</h2>
+
+  <p>I want to say something about the kind of honesty I am trying to practise in this series, because it is harder than it sounds.</p>
+
+  <p>There is a kind of public vulnerability that is actually a form of controlled self-disclosure — where you share the struggles you have already resolved, in ways that demonstrate your growth, with an implicit message of "look how far I have come." It is honest in a narrow sense and dishonest in a deeper one. It performs vulnerability while actually protecting the self from the exposure that genuine vulnerability involves.</p>
+
+  <p>I do not want to do that here. I want to write about things I have not resolved — questions I am still sitting with uncomfortably, failures I have not yet learned from, uncertainties that have not yet clarified. That is harder to write and harder to publish. It is also, I think, the version of this that is actually useful to anyone reading it.</p>
+
+  <p>I am not a doctoral researcher who has studied learning science and is now ready to teach others how to learn. I am a Vietnamese EFL educator with fifteen years of classroom practice, a growing understanding of learning science, and a doctoral programme that is teaching me, among other things, how much I do not yet know. That is what I have to offer. It is not nothing. But it is not expertise in the settled sense either.</p>
+
+  <blockquote>
+    <p>I stopped calling myself a teacher not because I stopped teaching, but because I started to understand that the most important learning happening in my classroom might need to be mine.</p>
+  </blockquote>
+
+  <p>I am still figuring out what that means in practice. This channel is where I figure it out in public.</p>
+
+  <div class="article-signoff">
+    <div class="signoff-text">Keep learning. Keep becoming.</div>
+    <div class="signoff-name">— Vy</div>
+  </div>
+
+</main>
+
+<div class="next-episode">
+  <div class="next-label">Next in this series</div>
+  <a class="next-card" href="../series/bal.html">
+    <div>
+      <div class="next-series">BAL · Episode 02</div>
+      <div class="next-title">Three months in — what I have learned about learning (and about myself)</div>
+    </div>
+    <span class="next-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <div class="article-footer">
+    <div class="footer-brand"><strong>The Becoming Learners</strong> · by Vy Phan</div>
+    <div class="footer-links">
+      <a href="../index.html">← All articles</a>
+      <a href="../series/bal.html">BAL series</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<div class="kh-bar"></div>
+
+</body>
+</html>
