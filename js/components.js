@@ -195,8 +195,23 @@
     }).join('');
   }
 
+  // ─── GOOGLE ANALYTICS 4 ─────────────────────────────────────
+  function injectAnalytics() {
+    const GA_ID = 'G-Z8WZP44KLK';
+    const s1 = document.createElement('script');
+    s1.async = true;
+    s1.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s1);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
   // ─── CHẠY TẤT CẢ KHI TRANG LOAD ────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
+    injectAnalytics();
     injectNav();
     injectFooter();
     updateSeriesStats();
